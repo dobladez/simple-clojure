@@ -356,15 +356,11 @@
 					<h2>Macros</h2>
                     <h4>Son operaciones "especiales" que ejecutan en tiempo de evaluación/compilación</h4>
                     <h4 class="fragment">Provistas por el usuario: son una forma de extender el languaje</h4>
-                    <h4 class="fragment">Muchas operaciones de la librería estándar son macros</h4>
-<pre class="highlight clojure fragment" style="font-size: 110%; line-height: normal;">
- (defn new-function [arg1 arg2] (body ...)
- <div class="fragment"> (def new-function
-  (fn [arg1 arg2] (body ...))</div></pre>
                 </section>
 
 				<section>
-					<h2>Macros</h2>
+                  <h3 class="fragment">Muchas operaciones de la librería estándar son macros</h3>
+
 <pre class="highlight clojure fragment" style="font-size: 110%; line-height: normal;">
    (defn new-function [arg1 arg2]
      (body ...)
@@ -373,6 +369,17 @@
       (fn [arg1 arg2] (body ...))</div></pre>
                 </section>
 
+
+				<section>
+					<h1>TO-DO:</h1>
+                    <ul>
+                      <li>Comparar lista the "complectings" en Java vs el equivalente en Clojure</li>
+                      <li>Demostrar la ventaja de separar datos de funciones. Más Composeable</li>
+                      <li>Demostrar solución al "Expression Problem"</li>
+                      <li>Hablar de inmutabilidad y sus ventajas</li>
+                      <li>Live coding / ClojureScript</li>
+                    </ul>
+                </section>
 
 
 				<section>
