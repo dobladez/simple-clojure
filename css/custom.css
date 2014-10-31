@@ -1,0 +1,64 @@
+
+
+
+.reveal div.vspacer25 {
+    padding-top: 25px;
+}
+
+.reveal div.vspacer50 {
+    padding-top: 50px;
+}
+
+.reveal div.vspacer75 {
+    padding-top: 75px;
+}
+
+.reveal div.vspacer100 {
+    padding-top: 100px;
+}
+
+
+.reveal span.font-big {
+  font-family: "Montserrat", Impact, sans-serif;
+  font-size: 3em;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  line-height: 1.1em;
+}
+
+.reveal section blockquote {
+
+    line-height: normal;
+    font-size: 2.5em;
+    width: 100%;
+    padding-top: 25px;
+}
+
+
+.reveal .slides section .fragment.shrink2 {
+    opacity: 1;
+}
+.reveal .slides section .fragment.shrink2.visible {
+    -webkit-transform: scale( 0.5 );
+    -moz-transform: scale( 0.5 );
+    -ms-transform: scale( 0.5 );
+    -o-transform: scale( 0.5 );
+    transform: scale( 0.5 );
+}
+
+.reveal .slides section .fragment.grow2 {
+    opacity: 1;
+}
+.reveal .slides section .fragment.grow2.visible {
+    -webkit-transform: scale( 1.8 );
+    -moz-transform: scale( 1.8 );
+    -ms-transform: scale( 1.8 );
+    -o-transform: scale( 1.8 );
+    transform: scale( 1.8 );
+}
