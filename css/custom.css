@@ -56,9 +56,18 @@
     opacity: 1;
 }
 .reveal .slides section .fragment.grow2.visible {
-    -webkit-transform: scale( 1.8 );
+    -webkit-transform: scale( 2.5);
     -moz-transform: scale( 1.8 );
     -ms-transform: scale( 1.8 );
     -o-transform: scale( 1.8 );
-    transform: scale( 1.8 );
+    transform: scale( 2.5 );
+}
+
+
+ul code {
+    color: yellow;
+}
+
+.reveal .colored {
+    color: #E7AD52;
 }

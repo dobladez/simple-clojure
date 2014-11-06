@@ -62,26 +62,33 @@
                   <h2>en el desarrollo de Software?</h2>
 
                   <div class="vspacer50"></div>
-                  <p class="fragment" data-fragment-index="1">- Problemas técnicos. Excluyo problems interpersonales o de requerimientos -</p>
+                  <div class="fragment" data-fragment-index="1">
+                    <p>- Me refiero a problemas técnicos -</p>
+                    <p>- Excluyo problemas interpersonales o de requerimientos -</p>
+                  </div>
 				</section>
 
                 <section data-state="wordcloud">
+                  <img src="custom-img/complexity1.jpg" />
 				  <h1>Complejidad</h1>
                   <!-- <div class="vspacer50"></div> -->
 				  <!-- <span class="font-big">Complejidad Esencial</span> -->
+
 				</section>
 
                 <section>
 
                   <blockquote>
-                    <h4>&ldquo;Controlling complexity is the essence of computer programming&rdquo;</h4>
+                    <!-- <h4>&ldquo;Controlling complexity is the essence of computer programming&rdquo;</h4> -->
+                    <h4>&ldquo;Controlar la complejidad  es la esencia de la programación de computadoras&rdquo;</h4>
                     <small>-- Brian Kernighan</small>
                   </blockquote>
 				</section>
 
                 <section>
                   <blockquote>
-                    <h4>&ldquo;The art of programming is the art of organizing complexity&rdquo;</h4>
+                    <!-- <h4>&ldquo;The art of programming is the art of organizing complexity&rdquo;</h4> -->
+                    <h4>&ldquo;El arte de la programación es el arte de organizar complejidad&rdquo;</h4>
                     <small>-- Dijkstra 1970</small>
                   </blockquote>
 				</section>
@@ -120,8 +127,8 @@
 				<!-- </section> -->
 
 
-                <section>
-                  <p> [ grafico comparando aumento de complejidad del software con nuevos requerimientos ]</p>
+                <section data-background="custom-img/complexity-chart.svg">
+                  <!-- <img src="custom-img/complexity-chart.svg" /> -->
 				</section>
 
 
@@ -143,8 +150,6 @@
                   </table>
 				</section>
 
-
-
                 <!-- <section data-state="wordcloud"> -->
 				<!--   <h2>Complejidad Esencial</h2> -->
                 <!--   <\!-- <div class="vspacer50"></div> -\-> -->
@@ -158,12 +163,12 @@
 
 				  <pre class="java highlight"  style="font-size: 100%; line-height: normal;">
 <div class="fragment shrink2" data-fragment-index="1">
-    class Hello {
-        public static void main(String[] args) {
+  class Hello {
+      public static void main(String[] args) {
 </div>
-<div class="fragment fade-out" data-fragment-index="1" style="display: inline-block;">            System.out.</div><div class="fragment grow2" style="display: inline-block;" data-fragment-index="1">println("Hello World!")</div><div class="fragment fade-out" data-fragment-index="1" style="display: inline-block;">;</div>
-<div class="fragment shrink2" data-fragment-index="1">        }
-    }
+<div class="fragment fade-out" data-fragment-index="1" style="display: inline-block;">          System.out.</div><div class="fragment grow2" style="display: inline-block;" data-fragment-index="1">println("Hello World!")</div><div class="fragment fade-out" data-fragment-index="1" style="display: inline-block;">;</div>
+<div class="fragment shrink2" data-fragment-index="1">      }
+  }
 </div>
 
 </pre>
@@ -171,38 +176,383 @@
 
 
                 <section>
-                  <h4>No solo el código acarrea Complejidad Accidental...</h4>
+                  <h4 class="fragment fade-out" data-fragment-index="1">No solo el código acarrea Complejidad Accidental...</h4>
 
 
-                  <h3 class="fragment">Application servers</h3>
+                  <h2 class="fragment" data-fragment-index="1">Application servers</h3>
                   <div class="fragment">
-                    <h3 >Frameworks / libs / tools</h3>
-                    <h4>(SOAP, JAX-*, Maven pom.xml, AspectJ, IDEs, ...)</h4>
+                    <h2 >Frameworks / libs / tools</h2>
+                    <h3>(SOAP, JAX-*, Maven pom.xml, AspectJ, IDEs, ...)</h3>
                   </div>
-                  <h3 class="fragment">Tests</h3>
-                  <h3 class="fragment">SOA</h3>
+                  <h2 class="fragment">Tests ?</h2>
+                  <!-- <h3 class="fragment">SOA ?</h3> -->
                 </section>
 
                 <section>
-                  <p> [ grafico comparando aumento de complejidad del software con nuevos requerimientos ]</p>
+				  <h2>Que algo sea SIMPLE</h2>
+                  <h2><em>NO</em> significa que sea FÁCIL</h2>
+				  <h3 class="fragment">- y viceversa -</h3>
+
+                  <div class="vspacer50"></div>
+                  <a class="fragment" href="http://www.infoq.com/presentations/Simple-Made-Easy">http://www.infoq.com/presentations/Simple-Made-Easy</a>
 				</section>
 
                 <section>
+				  <h2>Simple vs. Complejo</h2>
+                  <div class="fragment">
+                    <h3>- conceptos objetivos -</h3>
+                    <div class="vspacer50"></div>
+
+                    <img src="custom-img/simplicity.jpg" />
+                    <span>&nbsp;</span>
+                    <img src="custom-img/complexity.jpg" />
+                  </div>
+				</section>
+
+                <section>
+				  <h2>Fácil vs. Difícil</h2>
+                  <div class="fragment">
+                    <h3 >- conceptos subjetivos -</h3>
+                    <div class="vspacer50"></div>
+                    <h2 class="colored">主観的 - 주관적 - غير موضوعي</h2>
+                  </div>
+				</section>
+
+                <section>
+                  <h3>¿ Che, esta charla no era de</h3>
+                  <h1>Clojure ?</h1>
+                    <img style="border: none; background: none" width="178" height="238" src="custom-img/clojure-logo-plain.svg">
+
+                  <!-- <blockquote class="fragment"><small>&ldquo;Reducing incidental complexity is a primary focus of Clojure&rdquo; -- Rich Hickey</small></blockquote> -->
+                  <!-- <a hre="http://www.infoq.com/presentations/Simple-Made-Easy"></a> -->
+                </section>
+
+                <section>
+                  <!-- <blockquote><h4>&ldquo;Reducing incidental complexity is a primary focus of Clojure&rdquo;</h4></blockquote> -->
+                  <blockquote><h4>&ldquo;Reducir complejidad accidental es un principal foco de Clojure&rdquo;</h4></blockquote>
+                  <p>-- Rich Hickey</p>
+
+                </section>
+
+                <section style="text-align: left;">
+				  <h1 style="margin-left: 0px;">Simpleza</h1>
+                  <h3 style="margin-left: 0px;" class="fragment" data-fragment-index="1">
+                    Lispy - Funcional - Datos - Inmutabilidad
+                  </h3>
+				  <h1 style="margin-left: 160px; padding-top:10px">Focalización</h1>
+                  <h3 style="margin-left: 160px;" class="fragment" data-fragment-index="2">
+                    Interactivo - Abstracción - Macros
+                  </h3>
+				  <h1 style="margin-left: 320px; padding-top:10px">Practicidad</h1>
+                  <h3 style="margin-left: 320px;" class="fragment" data-fragment-index="3">
+                    JVM, JavaScript, CLR - Perf.
+                  </h3>
+				</section>
+
+
+
+				<section>
+					<h1>Sintaxis y Evaluación</h1>
+                </section>
+
+				<section>
+					<h2>Todo es evaluación de Expresiones</h2>
+					<h3 class="fragment">No existen los "statements"</h3>
+                </section>
+
+				<section>
+					<h2>Datos atómicos</h2>
+				  <pre class="clojure highlight"  style="font-size: 110%; line-height: normal;">
+
+       true false        ;; booleans
+
+       0 123 3.14  22/3  ;; Numbers
+
+       "JavaConf 2014"   ;; Strings
+
+       \a \z             ;; Chars
+
+       user-name         ;; Symbols
+
+       :key1             ;; keywords
+</pre>
+
+                    <!-- <ul style="font-size: 120%"> -->
+                    <!--   <li><code style="color: yellow">nil</code></li> -->
+                    <!--   <li>booleans: <code>true false</code></li> -->
+                    <!--   <li>Numbers: <code>0</code></li> -->
+                    <!--   <li>String: <code>"Hi"</code></li> -->
+                    <!--   <li>Char: <code>\a \b \c</code></li> -->
+                    <!--   <li>Symbol: <code>foo</code></li> -->
+                    <!--   <li>Keyword: <code>:bar</code></li> -->
+                    <!--   </ul> -->
+                </section>
+
+				<section>
+					<h2>Collecciones</h2>
+				  <pre class="clojure highlight"  style="font-size: 120%; line-heixght: normal;">
+
+           [1 2 "tres"]      ;; Array
+           <div class="fragment">           (1 2 "tres")      ;; List</div>
+<div class="fragment">           {:key1 "value1"
+            :key2 "value2" } ;; Map</div>
+<div class="fragment">           #{ 1 2 3 4 5 }  ;; Set</div>
+</pre>
+                </section>
+
+				<section>
+					<h2>Evaluación</h2>
+                    <h3>Todas las expresiones anteriores se evaluan a sí mismas.</h3>
+                    <h3 class="fragment">Exceptuando: <i>symbols</i> y <i>listas</i></h3>
+                </section>
+
+				<section>
+					<h2>Symbols</h2>
+                    <h3>Nombres que hacen referencia a otro dato</h3>
+                    <h4>Ejemplo: El nombre de un valor o una función:</h4>
+
+                    <pre class="highlight clojure"  style="font-size: 120%; line-height: normal;">
+
+            +
+            concat
+            my-number
+            my-function
+                    </pre>
+                </section>
+
+				<section>
+					<h2>Listas</h2>
+                    <h3>Son evaluadas como <em>operaciones</em></h3>
+                    <div class="vspacer50"></div>
+                    <pre class="highlight clojure"  style="font-size: 120%; line-height: normal;">
+       (operacion arg1 arg2 arg3)
+                    </pre>
+
+                    <h4 class="fragment">Operación: una función, un macro o una "forma especial"</h4>
+
+                </section>
+
+<!-- Quizás saltear la diff. entre funciones, special forms y macro? -->
+				<section>
+				  <h2>Operaciones: Funciones</h2>
+                  <div class="vspacer50"></div>
+                  <pre class="highlight clojure"  style="font-size: 120%; line-height: normal;">
+     (function-name arg1 arg2 arg3)
+</pre>
+
+                  <div class="vspacer50"></div>
+                  <h4><i>Eager evaluation:</i> Primero se evalua cada uno de los argumentos, luego se aplica la función</h4>
+                </section>
+
+				<section>
+                  <pre class="highlight clojure"  style="font-size: 120%; line-height: normal;">
+
+       (println "Hello " user-name)
+
+             (+ 1 2 3 4 5)
+
+         (concat [1 2 3] col2 col3)
+</pre>
+
+                </section>
+
+				<section>
+					<h2>"Special Forms"</h2>
+                    <h3>Primitivas provistas por el lenguaje</h3>
+                    <div class="vspacer25"></div>
+                    <h4>Evaluación de argumentos es particular para cada <i>special form</i></h4>
+
+                    <div class="vspacer25"></div>
+<!-- ;; In java: -->
+<!-- ;;   condition-exp ? true-exp : false-exp; -->
+
+<div class="fragment" data-fragment-index="1">
+                    <pre class="highlight clojure fragment fade-out"
+                         data-fragment-index="2"
+                         style="font-size: 120%; line-height: normal; position: absolute">
+    (if condition-exp true-exp false-exp)
+</pre>
+</div>
+                    <pre class="highlight clojure fragment fade-in"
+                         data-fragment-index="2"
+                         style="font-size: 120%; line-height: normal;">
+   (if (> danger-prob 0.9)
+       (launch-missiles)
+       (log/info "No danger detected"))
+</pre>
+
+                </section>
+
+				<!-- <section> -->
+                <!--     <h2><code>def if fn let do</code></h2> -->
+                <!--     <h2><code>quote var loop set!</code></h2> -->
+                <!--     <h2><code>recur throw try catch</code></h2> -->
+                <!-- </section> -->
+				<section>
+                    <h3><code>def if fn let do quote var loop</code></h3>
+                    <h3><code>set! recur throw try catch</code></h3>
+                    <!-- <div class="vspacer25"></div> -->
+                    <!-- <h4 class="fragment">Is that it?</h4> -->
+                </section>
+
+				<section>
+					<h2>Macros</h2>
+                    <h4>Son funciones que ejecutan en tiempo de evaluación/compilación</h4>
+                    <h4 class="fragment">Transforman expresiones en nuevas expresiones</h4>
+                    <!-- <h4 class="fragment">Reciben las expresiones de sus argumentos sin evaluar</h4> -->
+                    <h4 class="fragment">Son una forma de extender el languaje</h4>
+                    <h4 class="fragment">Todo el poder del lenguage está disponible</h4>
+                </section>
+
+				<section>
+				<section>
+                  <h3>Muchas operaciones de la librería estándar son macros</h3>
+                    <div class="vspacer25"></div>
+
+                    <h3><code>defn if-not and or when when-not ...</code></h3>
+                </section>
+                <section>
+<pre class="highlight clojure" style="font-size: 130%; line-height: normal;">
+                (and a b)
+<div class="fragment">
+;; Se expande a:
+                (if a b a)
+</div>
+<div class="fragment">
+                (and a b c)</div>
+<div class="fragment">;; se expande a:
+                (if a (and b c) a)
+<div class="fragment">                (if a (if b c b) a)</div>
+</div></pre>
+                </section>
+                </section>
+
+
+
+				<!-- <section> -->
+<!-- <pre class="highlight clojure" style="font-size: 110%; line-height: normal;"> -->
+<!--    (defn new-function [arg1 arg2] -->
+<!--      (body ...)) -->
+<!--  <div class="fragment">   ;; expands to: -->
+<!--    (def new-function -->
+<!--       (fn [arg1 arg2] (body ...))</div></pre> -->
+<!--                 </section> -->
+
+				<section>
+                  <h3>Resumiendo</h3>
+
+<pre class="highlight clojure fragment" style="font-size: 110%;">
+
+             ;; Tipos básicos
+             123  "hola"  :key
+
+             ;; Collecciones
+             [1 2 3 4 5]
+             {:key1 "value1" }
+
+   ;; Listas evaluadas como operaciones
+   (def my-value 1)          ;; special form
+   (concat  arg1 arg2 arg3)  ;; function
+   (and exp1 exp2)           ;; macro
+ </pre>
+                </section>
+
+                <section style="text-align: left;">
+				  <h3><center>&lt;CODE&gt;</center></h3>
+                </section>
+
+                <section style="text-align: left;">
+				  <h1 style="margin-left: 0px;">Simpleza</h1>
+                  <h3 style="margin-left: 0px;">
+                    Lispy - Funcional - Datos - Inmutabilidad
+                  </h3>
+				  <h1 style="margin-left: 160px; padding-top:10px">Focalización</h1>
+                  <h3 style="margin-left: 160px;">
+                    Interactivo - Abstracción - Macros
+                  </h3>
+				  <h1 style="margin-left: 320px; padding-top:10px">Practicidad</h1>
+                  <h3 style="margin-left: 320px;">
+                    JVM, JavaScript, CLR - Perf.
+                  </h3>
+				</section>
+
+				<section> STATE
+                    <ul>
+                      <li>"Out of the Tarpit" 2006</li>
+                      <li>Principal causante de complejidad: State</li>
+                      <li> por que? justifiacion/ejemplo</li>
+
+                      Una funcion pura es fácil de comprender y probar.  "Transparencia Referencial" (TODO: definir)
+
+                      <li> que nos provee Clojure: todo inmutable (y persistente). refs controlados</li>
+
+                      <!-- <li>Segundo causante de complejidad: Control Structures</li> -->
+
+                      <li>Implicancias:</li>
+                      <li>Paralelismo / Concurrencia sin locks (y eficiente)</li>
+                      <li>Semantica de Igualdad (no hace falta impl equals ni hashcode)</li>
+                      <li>Objetos complejos como "keys" de mapas</li>
+                    </ul>
+                </section>
+
+                <section> FUNCIONES - DATOS
+                  <ul>
+                    <li>Alan Perlis quote</li>
+                    <li>Torvalds quote</li>
+                    <li>Homogeneidad?: Las funciones estándar de Clojure para manipular colecciones estructuras anidadas</li>
+                    <li>Ejemplo Java: JodaTime (<code>java.time</code> en Java 8). Design principles:
+                      http://docs.oracle.com/javase/tutorial/datetime/overview/design.html
+                      Few functions: http://docs.oracle.com/javase/tutorial/datetime/overview/naming.html
+                    </li>
+                  </ul>
+                </section>
+
+                <section>
+					<h3>...Flappy State...</h3>
+                </section>
+
+
+                <section>
+                    <li>Polymorphism in clojure:  http://blog.8thlight.com/myles-megyesi/2012/04/26/polymorphism-in-clojure.html</li>
+                    <li>Protocols / expresion problem</li>
+                      <li>Comparar lista the "complectings" en Java vs el equivalente en Clojure</li>
+                      <li>Demostrar la ventaja de separar datos de funciones. Más Composeable</li>
+                  </ul>
+                </section>
+
+				<section>
+				  <h3>concurrency refs - core.async - core.logic</h3>
+                  <h3>metadata - pattern matching - clara.rules</h3>
+                  <h3>Datomic - Om/React -  ...</h3>
+                </section>
+
+
+                <section>
                   <blockquote>
+                    <!-- <h4> -->
+				    <!--   &ldquo;Simplicity is a great virtue but it requires -->
+                    <!-- <span class="fragment highlight-red" data-fragment-index="2">hard work to achieve it</span> -->
+                    <!-- and -->
+                    <!-- <span class="fragment highlight-green" data-fragment-index="1">education to appreciate it</span> ... -->
+                    <!-- </h4> -->
                     <h4>
-				      &ldquo;Simplicity is a great virtue but it requires
-                    <span class="fragment highlight-red" data-fragment-index="2">hard work to achieve it</span>
-                    and
-                    <span class="fragment highlight-green" data-fragment-index="1">education to appreciate it</span> ...
+				      &ldquo;La Simpleza en una gran virtud, pero requiere
+                    <span class="fragment highlight-red" data-fragment-index="2">mucho trabajo lograrla</span>
+                    y
+                    <span class="fragment highlight-green" data-fragment-index="1">educación para apreciarla</span> ...
                     </h4>
                   </blockquote>
                 </section>
 
                 <section>
                   <blockquote>
-                    <h4>...and to make matters worse</h4>
+                    <!-- <h4>...and to make matters worse</h4> -->
+                    <!-- <div class="fragment"> -->
+                    <!--   <h3>complexity sells better!&rdquo;</h3> -->
+                    <!-- </div> -->
+                    <h4>...y para empeorar las cosas...</h4>
                     <div class="fragment">
-                      <h3>complexity sells better!&rdquo;</h3>
+                      <h3>la Complejidad vende más!&rdquo;</h3>
                     </div>
                   </blockquote>
                   <p class="fragment">-- Dijkstra 1984</p>
@@ -211,176 +561,18 @@
                 <section>
                   <section>
                     <img src="custom-img/dijkstra_young.jpg" />
-                    <p>Dijkstra ~ '60 ¡Anteojos a la moda 2014!</p>
+                    <p>Dijkstra ~ '60</p>
+                    <h2><span class="fragment">¡Anteojos Hipster!</span></h2>
 				  </section>
 				  <section data-transition="linear" data-background="custom-img/BreakingBad-Edsjer-Dijkstra.png" data-background-transition="slide">
-                    <img class="fragment" src="custom-img/dijkstra_young.jpg" />
-                    <img class="fragment" src="custom-img/walter-white2.jpg" />
+                    <span class="fragment" data-fragment-index="2">
+                      <img class="fragment fade-out"
+                           data-fragment-index="3"
+                           style="position: absolute;" src="custom-img/dijkstra_young.jpg" /></span>
+                    <img class="fragment fade-in" data-fragment-index="3"
+                         src="custom-img/walter-white2.jpg" />
 				  </section>
                 </section>
-
-                <section>
-				  <h2>Que algo sea SIMPLE</h2>
-                  <h2><em>NO</em> significa que sea FÁCIL</h2>
-				  <h3 class="fragment">- y viceversa -</h3>
-
-				</section>
-
-                <section>
-				  <h2>Simple vs. Complejo</h2>
-                  <h3 class="fragment">- conceptos objetivos -</h3>
-				</section>
-
-                <section>
-				  <h2>Fácil vs. Difícil</h2>
-                  <h3 class="fragment">- conceptos subjetivos -</h3>
-				</section>
-
-                <section>
-                  <h2>Se supone que vine a hablar de</h2>
-                  <h1>Clojure</h1>
-                  <blockquote class="fragment"><small>&ldquo;Reducing incidental complexity is a primary focus of Clojure&ldquo; -- Rich Hickey</small></blockquote>
-                </section>
-
-                <section style="text-align: left;">
-				  <h1 style="margin-left: 0px;">Simplicidad</h1>
-                  <h3 style="margin-left: 0px;" class="fragment" data-fragment-index="1">
-                    Funcional - Datos - Inmutabilidad - Lisp
-                  </h3>
-				  <h1 style="margin-left: 160px; padding-top:10px">Foco</h1>
-                  <h3 style="margin-left: 160px;" class="fragment" data-fragment-index="2">
-                    Dinámico - Interactivo - Macros
-                  </h3>
-				  <h1 style="margin-left: 320px; padding-top:10px">Practicidad</h1>
-                  <h3 style="margin-left: 320px;" class="fragment" data-fragment-index="3">
-                    JVM, JavasScript, CLR - Performace
-                  </h3>
-				</section>
-
-
-
-				<section>
-					<h1>Sintaxis y Evaluación de Expresiones</h1>
-                </section>
-
-				<section>
-					<h2>Tabla de Scalares</h2>
-                    <ul>
-                      <li><code>nil</code></li>
-                      <li>booleans: <code>true false</code></li>
-                      <li>Numbers: <code>0</code></li>
-                      <li>String: <code>"Hi"</code></li>
-                      <li>Char: <code>\a \b \c</code></li>
-                      <li>Symbol: <code>foo</code></li>
-                      <li>Keyword: <code>:bar</code></li>
-                      </ul>
-                </section>
-
-				<section>
-					<h2>Tabla de Colecciones</h2>
-                    <ul>
-                      <li>Array: [1 2 "tres"] </li>
-                      <li>List: (1 2 "tres")</li>
-                      <li>Map: {:key1 "value2", :key2 "value2" }</li>
-                      <li>Set: #{ 1 2 3 4 5 6 }</li>
-                    </ul>
-                </section>
-
-				<section>
-					<h2>Evaluación</h2>
-                    <h3>Todas las expresiones anteriores se evaluan a sí mismas.</h3>
-                    <h3>Exceptuando: <i>symbols</i> y <i>listas</i></h3>
-                </section>
-
-				<section>
-					<h2>Listas</h2>
-                    <h3>Son evaluadas como operaciones</h3>
-                    <div class="vspacer50"></div>
-                    <pre class="highlight clojure"  style="font-size: 120%; line-height: normal;">
-       (operacion arg1 arg2 arg3)
-                    </pre>
-
-                    <h4>Operacion puede ser: una función, un macro, o una "forma especial"</h4>
-
-                </section>
-
-				<section>
-					<h2>Symbols</h2>
-                    <h3>Hacen referencia a otro "elemento" (TODO)</h3>
-                    <h3>Ej: el nombre de una valor o función:</h3>
-
-                    <pre class="highlight clojure"  style="font-size: 120%; line-height: normal;">
-     (+ 1 my-counter)
-     (concat my-vector-1 my-vector-2)
-                    </pre>
-
-
-                </section>
-
-				<section>
-				  <h2>Operaciones: Funciones</h2>
-                  <pre class="highlight clojure"  style="font-size: 120%; line-height: normal;">
-     (function-name arg1 arg2 arg3)
-</pre>
-
-                  <div class="vspacer50"></div>
-                  <h4><i>Earger evaluation</i>: Primero se evalua cada uno de los argumentos, luego se aplica la función</h4>
-
-                </section>
-
-				<section>
-					<h2>Special Forms</h2>
-                    <h3>Primitivas provistas por el lenguaje</h3>
-                    <div class="vspacer25"></div>
-                    <h4 class="fragment">Evaluación de argumentos es particular para cada <i>special form</i></h4>
-
-                    <div class="vspacer25"></div>
-                    <pre class="highlight clojure fragment" style="font-size: 120%; line-height: normal;">
-            (if (= a b)
-               "the same"
-               "Not the same")
-</pre>
-
-                </section>
-
-				<section>
-                    <h3><code class="fragment">def if fn let do quote var loop</code></h3>
-                    <h3><code class="fragment">recur throw try catch</code></h3>
-
-                    <div class="vspacer25"></div>
-                    <h4 class="fragment">that's it!</h4>
-
-                </section>
-
-				<section>
-					<h2>Macros</h2>
-                    <h4>Son operaciones "especiales" que ejecutan en tiempo de evaluación/compilación</h4>
-                    <h4 class="fragment">Provistas por el usuario: son una forma de extender el languaje</h4>
-                </section>
-
-				<section>
-                  <h3 class="fragment">Muchas operaciones de la librería estándar son macros</h3>
-
-<pre class="highlight clojure fragment" style="font-size: 110%; line-height: normal;">
-   (defn new-function [arg1 arg2]
-     (body ...)
- <div class="fragment">   ;; expands to:
-   (def new-function
-      (fn [arg1 arg2] (body ...))</div></pre>
-                </section>
-
-
-				<section>
-					<h1>TO-DO:</h1>
-                    <ul>
-                      <li>Comparar lista the "complectings" en Java vs el equivalente en Clojure</li>
-                      <li>Demostrar la ventaja de separar datos de funciones. Más Composeable</li>
-                      <li>Demostrar solución al "Expression Problem"</li>
-                      <li>Hablar de inmutabilidad y sus ventajas</li>
-                      <li>Live coding / ClojureScript</li>
-                    </ul>
-                </section>
-
 
 				<section>
 					<h1>Gracias</h1>
@@ -401,6 +593,10 @@
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
+
+                width: 960,
+                height: 700,
+
 				controls: true,
 				progress: true,
 				history: true,
@@ -428,6 +624,7 @@
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
+
 
 
             var buildWordCloud = function() {
