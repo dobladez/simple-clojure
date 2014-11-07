@@ -65,7 +65,12 @@
 
 
 ul code {
-    color: yellow;
+    color: #efef8f;
+}
+
+.reveal .inline-code {
+    color: #efef8f;
+    font-family: monospace;
 }
 
 .reveal .colored {

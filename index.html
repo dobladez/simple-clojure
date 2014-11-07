@@ -241,6 +241,22 @@
 
                 </section>
 
+                <section style="text-align: left;">
+				  <h1 style="margin-left: 0px;">Simpleza</h1>
+                  <h3 style="margin-left: 0px;" class="fragment" data-fragment-index="1">
+                    Lispy - Funcional - Datos - Inmutabilidad
+                  </h3>
+				  <h1 style="margin-left: 160px; padding-top:10px">Focalización</h1>
+                  <h3 style="margin-left: 160px;" class="fragment" data-fragment-index="2">
+                    Interactivo - Abstracción - Macros
+                  </h3>
+				  <h1 style="margin-left: 320px; padding-top:10px">Practicidad</h1>
+                  <h3 style="margin-left: 320px;" class="fragment" data-fragment-index="3">
+                    JVM, JavaScript, CLR - Perf.
+                  </h3>
+				</section>
+
+
 				<section>
 					<h1>Sintaxis y Evaluación</h1>
                 </section>
@@ -332,25 +348,6 @@
  </pre>
                 </section>
 
-                <section style="text-align: left;">
-				  <h3><center>&lt;CODE&gt;</center></h3>
-                </section>
-
-
-                <section style="text-align: left;">
-				  <h1 style="margin-left: 0px;">Simpleza</h1>
-                  <h3 style="margin-left: 0px;" class="fragment" data-fragment-index="1">
-                    Lispy - Funcional - Datos - Inmutabilidad
-                  </h3>
-				  <h1 style="margin-left: 160px; padding-top:10px">Focalización</h1>
-                  <h3 style="margin-left: 160px;" class="fragment" data-fragment-index="2">
-                    Interactivo - Abstracción - Macros
-                  </h3>
-				  <h1 style="margin-left: 320px; padding-top:10px">Practicidad</h1>
-                  <h3 style="margin-left: 320px;" class="fragment" data-fragment-index="3">
-                    JVM, JavaScript, CLR - Perf.
-                  </h3>
-				</section>
 
 <!-- Quizás saltear la diff. entre funciones, special forms y macro? -->
 
@@ -403,7 +400,7 @@
 <pre class="highlight clojure fragment fade-in"
                          style="font-size: 120%; line-height: normal;">
         (if (> danger-prob 0.9)
-          (launch-missiles)
+          (launch-missiles!)
           (log/info "No danger"))
 </pre>
 
@@ -504,117 +501,94 @@
 <!--                 </section> -->
 
 
-				<section>
-                  <h1>"Estado"</h1>
-                  <div class="vspacer50"></div>
-                  <h3>&ldquo;...Estado [mutable] es la principal causa de complejidad..&rdquo;</h3>
-                  <p>-- "Out of the Tarpit" paper, 2006</p>
-
-                      <!-- <li>Implicancias:</li> -->
-                      <!-- <li>Paralelismo / Concurrencia sin locks (y eficiente)</li> -->
-                      <!-- <li>Semantica de Igualdad (no hace falta impl equals ni hashcode)</li> -->
-                      <!-- <li>Objetos complejos como "keys" de mapas</li> -->
+                <section style="text-align: left;">
+				  <h3><center>&lt;CODE&gt;</center></h3>
                 </section>
+
 
 				<section>
-                  <h2>"Estado" en Clojure</h2>
+                  <h2>Funciones vs. Datos</h2>
                   <div class="vspacer50"></div>
-                  <h3>Funciones puras</h3>
-                  <h3>Transparencia referencial</h3>
-                  <h3>Inmutabilidad</h3>
-                  <h3>Estado - Valor - Identidad</h3>
-
+                  <h3>En Clojure: Funciones y Datos separados</h3>
                 </section>
+
+
+				<section>
+                  <blockquote><h5 style="font-size: 80%">&ldquo;Mejor tener 100 funciones operar sobre 1 estructura de datos, que 10 funciones sobre 10 estructuras de datos&rdquo;</h5></blockquote>
+                  <p>-- Alan Perlis</p>
+                </section>
+
+				<section>
+                  <h3>Homogeneidad</h3>
+                  <h4 class="fragment">Funciones estándar de Clojure para manipular estructuras y sequencias de cualquier tipo</h4>
+                </section>
+
+
+
                 <section>
-                  <h2>Funciones Puras</h2>
+                  <h3>Ejemplo: Homogeneidad en <span class="code-inline">java.time</span></h2>
                   <div class="vspacer50"></div>
 
-                  <!-- <h3>La llamada a una función pueder ser reemplazada por el valor sin cambiar el comportamiento del código</h3> -->
-                  <h3>No tienen efectos secundarios</h3>
-                  <h3>No modifican estado ni interactuan con el mundo exterior</h3>
-                </section>
+                  <h4><em>&ldquo;The Date-Time API offers a rich set of methods [...] names are made consistent between classes wherever possible&rdquo;</em></h4>
 
-                <section>
-                  <h2>Funciones Puras</h2>
                   <div class="vspacer50"></div>
-                  <h3>Clojure <em>no</em> es un lenguaje funcional puro</h3>
-                  <div class="vspacer25"></div>
-<pre class="highlight clojure fragment" style="font-size: 110%;">
-  ;; Asignación es un efecto secundario:
-  (def name "Joe")
-
-  ;; Convención '!' para fn impuras
-  (delete-all-records!)
-  (launch-missiles!)
+                  <pre class="highlight clojure fragment fade-in" style="font-size: 100%; line-height: normal;">
+          of from parse format get is
+             with plus minus to at
 </pre>
-
-                </section>
-
-                <section>
-                  <h2>Transparencia Referencial</h2>
-                  <!-- <h3>La llamada a una función pueder ser reemplazada por el valor sin cambiar el comportamiento del código</h3> -->
-                  <h3>El resultado de una función depende sólo de sus argumentos</h3>
-                </section>
-
-                <section>
-                  <h2>Transparencia Referencial</h2>
-                  <div class="vspacer25"></div>
-<pre class="highlight clojure fragment" style="font-size: 110%;">
-  (get-expired-invoices)
-</pre>
-<pre class="highlight clojure fragment" style="font-size: 110%;">
-
-  ;; Pasando la lista explícitamente
-  (get-expired-invoices all-invoices)
-</pre>
-
-<pre class="highlight clojure fragment" style="font-size: 110%;">
-
-  ;; Pasando el instante de referencia
-  ;; explícitamente
-  (get-expired-invoices all-invoices now)
-  (get-expired-invoices all-invoices as-of)
-</pre>
-<pre class="highlight clojure fragment" style="font-size: 110%;">
-  (filter (expired? now) all-invoices)
-</pre>
-                </section>
-
-                <section>
-                  <h2>Transparencia Referencial</h2>
-                  <div class="vspacer25"></div>
-                  <h3>Es más fácil razonar acerca del código</h3>
-                  <h3>Es más fácil de probar</h3>
-                  <h3>Es más fácil de <em>cachear</em> el resultado</h3>
-                  <h3>Menos dependencias implícitas entre funciones</h3>
-                </section>
-
-                <section>
-                  <h2>"Estado" en Clojure</h2>
                   <div class="vspacer50"></div>
-                  <h3>Inmutabilidad</h3>
-                  <h3>Estado - Valor - Identidad</h3>
-                  <h3>Favorece Funciones puras</h3>
-                  <h3>Favorece Transparencia Referencial</h3>
-
-                </section>
-
-                <section>
-                  <h2>Inmutabilidad</h2>
-                  <div class="vspacer25"></div>
-                </section>
-
-                <section> FUNCIONES - DATOS
-                  <ul>
-                    <li>Alan Perlis quote</li>
-                    <li>Torvalds quote</li>
-                    <li>Homogeneidad?: Las funciones estándar de Clojure para manipular colecciones estructuras anidadas</li>
-                    <li>Ejemplo Java: JodaTime (<code>java.time</code> en Java 8). Design principles:
-                      http://docs.oracle.com/javase/tutorial/datetime/overview/design.html
-                      Few functions: http://docs.oracle.com/javase/tutorial/datetime/overview/naming.html
+                  <small><a href="http://docs.oracle.com/javase/tutorial/datetime/overview/naming.html">
+                      http://docs.oracle.com/javase/tutorial/datetime/overview/naming.html
+                  </a></small>
                     </li>
                   </ul>
                 </section>
+
+				<section>
+
+                  <h3 class="fragment">Permite que las funciones y datos de distintas librerías puedan interoperar</h3>
+                  <h2 class="fragment">Componer > Reutilizar</h2>
+                </section>
+
+                <section>
+                  <h3>Anti-ejemplo: Apache Commons CSV</h3>
+<pre class="highlight java fragment fade-in" style="font-size: 90%; line-height: normal;">
+
+  Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(in);
+  for (CSVRecord record : records) {
+      String lastName = record.get("Last Name");
+      String firstName = record.get("First Name");
+      ...
+  }
+</pre>
+
+                  <small><a href="http://commons.apache.org/proper/commons-csv/user-guide.html">
+                      http://commons.apache.org/proper/commons-csv/user-guide.html
+                  </a></small>
+
+                </section>
+
+                <section>
+<pre class="highlight clojure" style="font-size: 90%; line-height: normal;">
+           (parse-csv in)
+<div class="fragment">           (to-json (parse-csv in))</div>
+<div class="fragment">           (db/insert! (parse-csv in))</div>
+<div class="fragment">           (set/union (parse-csv in1)
+                      (parse-csv in2))</div>
+
+<div class="fragment">           (-> (parse-csv in)
+               log/info
+               db/insert!
+               to-json)</div>
+
+</pre>
+
+                  <small><a href="http://commons.apache.org/proper/commons-csv/user-guide.html">
+                      http://commons.apache.org/proper/commons-csv/user-guide.html
+                  </a></small>
+
+                </section>
+
 
                 <section>
 					<h3>...Flappy State...</h3>
@@ -628,6 +602,158 @@
                       <li>Demostrar la ventaja de separar datos de funciones. Más Composeable</li>
                   </ul>
                 </section>
+
+				<section>
+                  <h2>"Estado"</h2>
+                  <div class="vspacer50 fragment">
+                    <blockquote><h4>&ldquo;...Estado [mutable] es la principal causa de complejidad...&rdquo;</h4></blockquote>
+                    <p>-- "Out of the Tarpit" paper, 2006</p>
+
+                    <!-- <li>Implicancias:</li> -->
+                    <!-- <li>Paralelismo / Concurrencia sin locks (y eficiente)</li> -->
+                    <!-- <li>Semantica de Igualdad (no hace falta impl equals ni hashcode)</li> -->
+                    <!-- <li>Objetos complejos como "keys" de mapas</li> -->
+
+                  </div>
+                </section>
+
+				<section>
+                  <h2>"Estado" en Clojure</h2>
+                  <div class="vspacer50"></div>
+                  <h3>Funciones puras y "Transparencia Referencial"</h3>
+                  <!-- <h3>Transparencia referencial</h3> -->
+                  <h3>Inmutabilidad</h3>
+                  <h3>Estado - Valor - Identidad</h3>
+
+                </section>
+
+                <section>
+                  <h2>Funciones Puras</h2>
+                  <div class="vspacer50"></div>
+
+                  <h3>El resultado de una función pura depende sólo de sus argumentos</h3>
+                  <h3 class="fragment">Una función pura no tiene efectos secundarios</h3>
+
+                  <!-- <h3>La llamada a una función pueder ser reemplazada por el valor sin cambiar el comportamiento del código</h3> -->
+                  <!-- <h3>Una función pura siempre retorna el mismo resultado dado los mismos argumentos</h3> -->
+                  <!-- <h3>No modifican estado ni interactuan con el mundo exterior</h3> -->
+                  <!-- <h3>No dependen de estado externo</h3> -->
+                </section>
+
+                <section>
+                  <h3>Objetivo:</h3>
+                  <h2>Transparencia Referencial</h2>
+                  <div class="vspacer25"></div>
+                  <h3>Que la llamada a una función pueda ser reemplazada por su resultado sin cambiar el comportamiento del código</h3>
+                  <!-- <h3>El resultado de una función depende sólo de sus argumentos</h3> -->
+                </section>
+
+                <section>
+<pre class="highlight clojure" style="font-size: 110%;">
+  (get-expiring-invoices)
+</pre>
+<pre class="highlight clojure fragment" style="font-size: 110%;">
+  <!-- ;; Pasando la  explícitamente -->
+  (get-expiring-invoices invoices)
+</pre>
+
+<pre class="highlight clojure fragment" style="font-size: 110%;"><!-- ;; Pasando el instante de referencia --> <!-- ;; explícitamente -->
+  (get-expiring-invoices invoices (now))
+</pre>
+<pre class="highlight clojure fragment" style="font-size: 110%;">
+
+  (filter (partial expired? as-of) invoices)
+</pre>
+                </section>
+
+                <section>
+                  <h2>Transparencia Referencial</h2>
+                  <div class="vspacer25"></div>
+                  <h3 class="fragment">Fácil razonar acerca del código</h3>
+                  <h3 class="fragment">Fácil de probar</h3>
+                  <h3 class="fragment">Fácil de experimentar</h3>
+                  <h3 class="fragment">Fácil de reutilizar y componer</h3>
+                  <h3 class="fragment">Es "thread-safe"</h3>
+                  <h3 class="fragment">Es más fácil de <em>cachear</em> el resultado</h3>
+                  <h3 class="fragment">Menos dependencias implícitas entre funciones</h3>
+                </section>
+
+                <section data-backgroundX="custom-img/extremely-volatile.jpg">
+                  <h3>Clojure <em>NO</em> es un lenguaje funcional puro</h3>
+                  <div class="vspacer25"></div>
+<pre class="highlight clojure fragment" style="font-size: 110%;">
+  ;; Asignación es un efecto secundario:
+  (def name "Joe")
+
+  ;; Convención '!' para fn con effectos s.
+  (delete-all-records!)
+  (launch-missiles!)
+</pre>
+                </section>
+
+                <section>
+                  <!-- <h2>Inmutabilidad</h2> -->
+                  <!-- <div class="vspacer25"></div> -->
+<pre class="highlight clojure" style="font-size: 130%;">
+     (expired? as-of invoice)
+</pre>
+  <div class="vspacer25"></div>
+  <h3 class="fragment">¿Y si <span class="inline-code">expired?</span> modifica al <span class="inline-code">invoice</span>?</h3>
+  <h3 class="fragment">perdemos transparencia referencial :-(</h3>
+  <div class="vspacer75"></div>
+  <h3 class="fragment">¿Y si <span class="inline-code">invoice</span> fuese inmutable?</h3>
+  <h3 class="fragment">la recuperamos :-)</h3>
+                </section>
+
+                <section>
+                  <h2>Inmutabilidad</h2>
+                  <h3 class="fragment">¡En Clojure los valores son inmutables!</h3>
+                  <div class="vspacer25"></div>
+
+                  <h4 class="fragment">Incluyendo collecciones, con anidamiento</h4>
+                  <h4 class="fragment">También los tipos definidos por el usuario <span class="inline-code">(defrecord )</span></h4>
+                  <h4 class="fragment">Además son "persistentes"</h4>
+                  <h4 class="fragment">Las secuencias "lazy" también son inmutables</h4>
+                  <div class="vspacer25"></div>
+                  <h4 class="fragment">Excepción: objetos mutables de un API Java</h4>
+                </section>
+
+                <section>
+                  <h2>En Java (típico en OO):</h2>
+                  <h3>Referencias <em>directas</em> a objetos <em>mutables</em></h3>
+                  <img src="custom-img/referencias-mutables.png" >
+                  <h4 class="fragment">Identidad y Valor van juntos</h4>
+                  <h4 class="fragment">El estado puede cambiar en cualquier momento</h4>
+                </section>
+
+                <section>
+                  <h2>En Clojure:</h2>
+                  <h3>Referencias <em>indirectas</em> a objetos <em>inmutables</em></h3>
+                  <img src="custom-img/referencias-inmutables.png" >
+                  <h4 class="fragment">Separa Identidad del Valor</h4>
+                  <h4 class="fragment">Los Valores no cambian</h4>
+                  <h4 class="fragment">De-referencia explícita para obtener un Valor</h4>
+                </section>
+
+                <section>
+                  <h3>Cambio de estado: Atómico</h3>
+                  <img src="custom-img/referencias-inmutables-change.png" >
+                  <h4 class="fragment">Identidad: sucesión de Valores inmutables</h4>
+                  <h4 class="fragment">No bloquea otros "readers"</h4>
+                  <h4 class="fragment">No afecta valores anteriores</h4>
+                </section>
+
+
+                <section>
+                  <h2>Inmutabilidad</h2>
+                  <h4 class="fragment">Permite Transparencia Referencial</h4>
+                  <h4 class="fragment">Concurrencia (sin locks). "Thread-safe"</h4>
+                  <h4 class="fragment">Semántica clara y útil de igualdad</h4>
+                  <h4 class="fragment">Cualquier dato puede ser "key" de un mapa</h4>
+                  <h4 class="fragment">Performance puede incluso ser mejor (Om/React)</h4>
+                </section>
+
+
 
 				<section>
 				  <h3>concurrency refs - core.async - core.logic</h3>
