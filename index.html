@@ -79,6 +79,13 @@
                 <section>
 
                   <blockquote>
+                    <h5>&ldquo;...es la principal dificultad en el desarrollo exitoso de software...&rdquo;</h5>
+                  </blockquote>
+                  <p><b>"Out of the Tar Pit"</b> paper, 2006</p><p>By Ben Moseley &amp; Peter Marks</p>
+				</section>
+                <section>
+
+                  <blockquote>
                     <!-- <h4>&ldquo;Controlling complexity is the essence of computer programming&rdquo;</h4> -->
                     <h4>&ldquo;Controlar la complejidad  es la esencia de la programación de computadoras&rdquo;</h4>
                     <small>-- Brian Kernighan</small>
@@ -219,8 +226,8 @@
 				</section>
 
                 <section>
-                  <h3>¿ Che, esta charla no era de</h3>
-                  <h1>Clojure ?</h1>
+                  <h3>¿Qué tiene que ver esto con</h3>
+                  <h1>Clojure?</h1>
                     <img style="border: none; background: none" width="178" height="238" src="custom-img/clojure-logo-plain.svg">
 
                   <!-- <blockquote class="fragment"><small>&ldquo;Reducing incidental complexity is a primary focus of Clojure&rdquo; -- Rich Hickey</small></blockquote> -->
@@ -234,30 +241,8 @@
 
                 </section>
 
-                <section style="text-align: left;">
-				  <h1 style="margin-left: 0px;">Simpleza</h1>
-                  <h3 style="margin-left: 0px;" class="fragment" data-fragment-index="1">
-                    Lispy - Funcional - Datos - Inmutabilidad
-                  </h3>
-				  <h1 style="margin-left: 160px; padding-top:10px">Focalización</h1>
-                  <h3 style="margin-left: 160px;" class="fragment" data-fragment-index="2">
-                    Interactivo - Abstracción - Macros
-                  </h3>
-				  <h1 style="margin-left: 320px; padding-top:10px">Practicidad</h1>
-                  <h3 style="margin-left: 320px;" class="fragment" data-fragment-index="3">
-                    JVM, JavaScript, CLR - Perf.
-                  </h3>
-				</section>
-
-
-
 				<section>
 					<h1>Sintaxis y Evaluación</h1>
-                </section>
-
-				<section>
-					<h2>Todo es evaluación de Expresiones</h2>
-					<h3 class="fragment">No existen los "statements"</h3>
                 </section>
 
 				<section>
@@ -276,48 +261,41 @@
 
        :key1             ;; keywords
 </pre>
-
-                    <!-- <ul style="font-size: 120%"> -->
-                    <!--   <li><code style="color: yellow">nil</code></li> -->
-                    <!--   <li>booleans: <code>true false</code></li> -->
-                    <!--   <li>Numbers: <code>0</code></li> -->
-                    <!--   <li>String: <code>"Hi"</code></li> -->
-                    <!--   <li>Char: <code>\a \b \c</code></li> -->
-                    <!--   <li>Symbol: <code>foo</code></li> -->
-                    <!--   <li>Keyword: <code>:bar</code></li> -->
-                    <!--   </ul> -->
                 </section>
 
 				<section>
-					<h2>Collecciones</h2>
+					<h2>Datos compuestos</h2>
 				  <pre class="clojure highlight"  style="font-size: 120%; line-heixght: normal;">
 
            [1 2 "tres"]      ;; Array
            <div class="fragment">           (1 2 "tres")      ;; List</div>
 <div class="fragment">           {:key1 "value1"
             :key2 "value2" } ;; Map</div>
-<div class="fragment">           #{ 1 2 3 4 5 }  ;; Set</div>
-</pre>
+<div class="fragment">           #{1 2 3 4 5}      ;; Set
+
+           ;; Todas pueden anidarse</div></pre>
+                </section>
+
+				<section>
+					<h2>Todo es evaluación de Expresiones</h2>
+					<h3 class="fragment">No existen las sentencias ("statements")</h3>
                 </section>
 
 				<section>
 					<h2>Evaluación</h2>
-                    <h3>Todas las expresiones anteriores se evaluan a sí mismas.</h3>
-                    <h3 class="fragment">Exceptuando: <i>symbols</i> y <i>listas</i></h3>
+                    <h4>Los tipos de datos anteriores evaluan a sí mismos</h4>
+                    <h2 class="fragment">Excepciones: <i>Symbols</i> y <i>Lists</i></h2>
                 </section>
 
 				<section>
 					<h2>Symbols</h2>
-                    <h3>Nombres que hacen referencia a otro dato</h3>
-                    <h4>Ejemplo: El nombre de un valor o una función:</h4>
-
-                    <pre class="highlight clojure"  style="font-size: 120%; line-height: normal;">
-
-            +
-            concat
-            my-number
-            my-function
-                    </pre>
+                    <h3>Se evaluan al dato al que hacen referencia</h3>
+                    <div class="vspacer50"></div>
+                    <pre class="highlight clojure"  style="font-size: 140%; line-height: normal;">
+              pi
+              user-name
+              concat
+</pre>
                 </section>
 
 				<section>
@@ -325,118 +303,15 @@
                     <h3>Son evaluadas como <em>operaciones</em></h3>
                     <div class="vspacer50"></div>
                     <pre class="highlight clojure"  style="font-size: 120%; line-height: normal;">
-       (operacion arg1 arg2 arg3)
+       (operación arg1 arg2 arg3)
+       <div class="fragment">
+       (println "Hello " user-name)</div>
                     </pre>
 
                     <h4 class="fragment">Operación: una función, un macro o una "forma especial"</h4>
 
                 </section>
 
-<!-- Quizás saltear la diff. entre funciones, special forms y macro? -->
-				<section>
-				  <h2>Operaciones: Funciones</h2>
-                  <div class="vspacer50"></div>
-                  <pre class="highlight clojure"  style="font-size: 120%; line-height: normal;">
-     (function-name arg1 arg2 arg3)
-</pre>
-
-                  <div class="vspacer50"></div>
-                  <h4><i>Eager evaluation:</i> Primero se evalua cada uno de los argumentos, luego se aplica la función</h4>
-                </section>
-
-				<section>
-                  <pre class="highlight clojure"  style="font-size: 120%; line-height: normal;">
-
-       (println "Hello " user-name)
-
-             (+ 1 2 3 4 5)
-
-         (concat [1 2 3] col2 col3)
-</pre>
-
-                </section>
-
-				<section>
-					<h2>"Special Forms"</h2>
-                    <h3>Primitivas provistas por el lenguaje</h3>
-                    <div class="vspacer25"></div>
-                    <h4>Evaluación de argumentos es particular para cada <i>special form</i></h4>
-
-                    <div class="vspacer25"></div>
-<!-- ;; In java: -->
-<!-- ;;   condition-exp ? true-exp : false-exp; -->
-
-<div class="fragment" data-fragment-index="1">
-                    <pre class="highlight clojure fragment fade-out"
-                         data-fragment-index="2"
-                         style="font-size: 120%; line-height: normal; position: absolute">
-    (if condition-exp true-exp false-exp)
-</pre>
-</div>
-                    <pre class="highlight clojure fragment fade-in"
-                         data-fragment-index="2"
-                         style="font-size: 120%; line-height: normal;">
-   (if (> danger-prob 0.9)
-       (launch-missiles)
-       (log/info "No danger detected"))
-</pre>
-
-                </section>
-
-				<!-- <section> -->
-                <!--     <h2><code>def if fn let do</code></h2> -->
-                <!--     <h2><code>quote var loop set!</code></h2> -->
-                <!--     <h2><code>recur throw try catch</code></h2> -->
-                <!-- </section> -->
-				<section>
-                    <h3><code>def if fn let do quote var loop</code></h3>
-                    <h3><code>set! recur throw try catch</code></h3>
-                    <!-- <div class="vspacer25"></div> -->
-                    <!-- <h4 class="fragment">Is that it?</h4> -->
-                </section>
-
-				<section>
-					<h2>Macros</h2>
-                    <h4>Son funciones que ejecutan en tiempo de evaluación/compilación</h4>
-                    <h4 class="fragment">Transforman expresiones en nuevas expresiones</h4>
-                    <!-- <h4 class="fragment">Reciben las expresiones de sus argumentos sin evaluar</h4> -->
-                    <h4 class="fragment">Son una forma de extender el languaje</h4>
-                    <h4 class="fragment">Todo el poder del lenguage está disponible</h4>
-                </section>
-
-				<section>
-				<section>
-                  <h3>Muchas operaciones de la librería estándar son macros</h3>
-                    <div class="vspacer25"></div>
-
-                    <h3><code>defn if-not and or when when-not ...</code></h3>
-                </section>
-                <section>
-<pre class="highlight clojure" style="font-size: 130%; line-height: normal;">
-                (and a b)
-<div class="fragment">
-;; Se expande a:
-                (if a b a)
-</div>
-<div class="fragment">
-                (and a b c)</div>
-<div class="fragment">;; se expande a:
-                (if a (and b c) a)
-<div class="fragment">                (if a (if b c b) a)</div>
-</div></pre>
-                </section>
-                </section>
-
-
-
-				<!-- <section> -->
-<!-- <pre class="highlight clojure" style="font-size: 110%; line-height: normal;"> -->
-<!--    (defn new-function [arg1 arg2] -->
-<!--      (body ...)) -->
-<!--  <div class="fragment">   ;; expands to: -->
-<!--    (def new-function -->
-<!--       (fn [arg1 arg2] (body ...))</div></pre> -->
-<!--                 </section> -->
 
 				<section>
                   <h3>Resumiendo</h3>
@@ -461,38 +336,272 @@
 				  <h3><center>&lt;CODE&gt;</center></h3>
                 </section>
 
+
                 <section style="text-align: left;">
 				  <h1 style="margin-left: 0px;">Simpleza</h1>
-                  <h3 style="margin-left: 0px;">
+                  <h3 style="margin-left: 0px;" class="fragment" data-fragment-index="1">
                     Lispy - Funcional - Datos - Inmutabilidad
                   </h3>
 				  <h1 style="margin-left: 160px; padding-top:10px">Focalización</h1>
-                  <h3 style="margin-left: 160px;">
+                  <h3 style="margin-left: 160px;" class="fragment" data-fragment-index="2">
                     Interactivo - Abstracción - Macros
                   </h3>
 				  <h1 style="margin-left: 320px; padding-top:10px">Practicidad</h1>
-                  <h3 style="margin-left: 320px;">
+                  <h3 style="margin-left: 320px;" class="fragment" data-fragment-index="3">
                     JVM, JavaScript, CLR - Perf.
                   </h3>
 				</section>
 
-				<section> STATE
-                    <ul>
-                      <li>"Out of the Tarpit" 2006</li>
-                      <li>Principal causante de complejidad: State</li>
-                      <li> por que? justifiacion/ejemplo</li>
+<!-- Quizás saltear la diff. entre funciones, special forms y macro? -->
 
-                      Una funcion pura es fácil de comprender y probar.  "Transparencia Referencial" (TODO: definir)
+				<section>
+					<h3>Operaciones</h3>
+                  <div class="vspacer50"></div>
+                    <h2>Funciones</h2>
+                    <h2>"Formas Especiales"</h2>
+                    <h2>Macros</h2>
+                </section>
 
-                      <li> que nos provee Clojure: todo inmutable (y persistente). refs controlados</li>
+				<section>
+				  <h2>Operaciones: Funciones</h2>
+                  <div class="vspacer50"></div>
+                  <pre class="highlight clojure"  style="font-size: 120%; line-height: normal;">
+     (function-name arg1 arg2 arg3)
+</pre>
 
-                      <!-- <li>Segundo causante de complejidad: Control Structures</li> -->
+                  <div class="vspacer50"></div>
+                  <h4><i>Eager evaluation:</i> Primero se evalua cada uno de los argumentos, luego se aplica la función</h4>
+                </section>
 
-                      <li>Implicancias:</li>
-                      <li>Paralelismo / Concurrencia sin locks (y eficiente)</li>
-                      <li>Semantica de Igualdad (no hace falta impl equals ni hashcode)</li>
-                      <li>Objetos complejos como "keys" de mapas</li>
-                    </ul>
+				<section>
+                  <pre class="highlight clojure"  style="font-size: 120%; line-height: normal;">
+
+       (println "Hello " user-name)
+
+             (+ 1 2 3 4 5)
+
+         (concat [1 2 3] col2 col3)
+</pre>
+
+                </section>
+
+				<section>
+					<h2>Operaciones: "Special Forms"</h2>
+                    <h3>Primitivas provistas por el lenguaje</h3>
+                    <div class="vspacer25"></div>
+                    <h4>Evaluación de argumentos es particular para cada <i>special form</i></h4>
+
+                    <div class="vspacer25"></div>
+<!-- ;; In java: -->
+<!-- ;;   condition-exp ? true-exp : false-exp; -->
+
+<pre class="highlight clojure fragment" style="font-size: 120%;">
+        (def pi 3.1415)
+        (def user-name "joe")
+</pre>
+<div class="vspacer25"></div>
+<pre class="highlight clojure fragment fade-in"
+                         style="font-size: 120%; line-height: normal;">
+        (if (> danger-prob 0.9)
+          (launch-missiles)
+          (log/info "No danger"))
+</pre>
+
+                </section>
+
+				<!-- <section> -->
+                <!--     <h2><code>def if fn let do</code></h2> -->
+                <!--     <h2><code>quote var loop set!</code></h2> -->
+                <!--     <h2><code>recur throw try catch</code></h2> -->
+                <!-- </section> -->
+				<section>
+                    <h3><code>def if fn let do quote var loop</code></h3>
+                    <h3><code>set! recur throw try catch</code></h3>
+                    <!-- <div class="vspacer25"></div> -->
+                    <!-- <h4 class="fragment">Is that it?</h4> -->
+                </section>
+
+				<section>
+					<h2>Operaciones: Macros</h2>
+                    <h3 class="fragment">Funciones que ejecutan en tiempo de compilación</h3>
+                    <h3 class="fragment">Transforman expresiones</h3>
+                    <!-- <h4 class="fragment">Reciben las expresiones de sus argumentos sin evaluar</h4> -->
+                    <h3 class="fragment">Permiten extender el languaje</h3>
+                    <h3 class="fragment">Todo el poder del lenguage está disponible</h3>
+                </section>
+
+				<section>
+                  <h3>Muchas operaciones de la librería estándar son macros</h3>
+                    <div class="vspacer25"></div>
+
+                    <h3><code>defn if-not and or when when-not ...</code></h3>
+                </section>
+				<section>
+                  <h3>Ej. Liberar recursos</h3>
+                    <div class="vspacer25"></div>
+<pre class="highlight clojure fragment fade-in"
+                         style="font-size: 100%; line-height: normal;">
+     (with-open [w (io/writer out-file)]
+        (write-data! w))</pre>
+<pre class="highlight clojure fragment fade-in"
+                         style="font-size: 100%; line-height: normal;">
+
+     ;; Se expande a...  (aprox.)
+
+     (let [w (io/writer out-file)]
+       (try (write-data! w)
+            (finally (. w close))))
+</pre>
+                </section>
+				<section>
+                  <h3>Ej. Macros para definir API REST</h3>
+                    <div class="vspacer25"></div>
+<pre class="highlight clojure fragment fade-in"
+                         style="font-size: 90%; line-height: normal;">
+(defroutes secured-routes
+
+  (GET "/task-filters" []
+       (response (task-filters/fetch-all)))
+
+  (POST "/task-filters" request
+        (response (task-filters/insert
+                     (:body request)
+                     (auth/current-user request))))
+
+  (GET "/task-filters/:id" [id]
+       (response (task-filters/ensure-by-id id)))
+
+  (DELETE "/task-filters/:id" [id]
+       (response (task-filters/delete-by-id! id))))
+</pre>
+
+                </section>
+<!--                 <section> -->
+<!-- <pre class="highlight clojure" style="font-size: 130%; line-height: normal;"> -->
+<!--                 (and a b) -->
+<!-- <div class="fragment"> -->
+<!-- ;; Se expande a: -->
+<!--                 (if a b a) -->
+<!-- </div> -->
+<!-- <div class="fragment"> -->
+<!--                 (and a b c)</div> -->
+<!-- <div class="fragment">;; se expande a: -->
+<!--                 (if a (and b c) a) -->
+<!-- <div class="fragment">                (if a (if b c b) a)</div> -->
+<!-- </div></pre> -->
+<!--                 </section> -->
+                </section>
+
+
+
+				<!-- <section> -->
+<!-- <pre class="highlight clojure" style="font-size: 110%; line-height: normal;"> -->
+<!--    (defn new-function [arg1 arg2] -->
+<!--      (body ...)) -->
+<!--  <div class="fragment">   ;; expands to: -->
+<!--    (def new-function -->
+<!--       (fn [arg1 arg2] (body ...))</div></pre> -->
+<!--                 </section> -->
+
+
+				<section>
+                  <h1>"Estado"</h1>
+                  <div class="vspacer50"></div>
+                  <h3>&ldquo;...Estado [mutable] es la principal causa de complejidad..&rdquo;</h3>
+                  <p>-- "Out of the Tarpit" paper, 2006</p>
+
+                      <!-- <li>Implicancias:</li> -->
+                      <!-- <li>Paralelismo / Concurrencia sin locks (y eficiente)</li> -->
+                      <!-- <li>Semantica de Igualdad (no hace falta impl equals ni hashcode)</li> -->
+                      <!-- <li>Objetos complejos como "keys" de mapas</li> -->
+                </section>
+
+				<section>
+                  <h2>"Estado" en Clojure</h2>
+                  <div class="vspacer50"></div>
+                  <h3>Funciones puras</h3>
+                  <h3>Transparencia referencial</h3>
+                  <h3>Inmutabilidad</h3>
+                  <h3>Estado - Valor - Identidad</h3>
+
+                </section>
+                <section>
+                  <h2>Funciones Puras</h2>
+                  <div class="vspacer50"></div>
+
+                  <!-- <h3>La llamada a una función pueder ser reemplazada por el valor sin cambiar el comportamiento del código</h3> -->
+                  <h3>No tienen efectos secundarios</h3>
+                  <h3>No modifican estado ni interactuan con el mundo exterior</h3>
+                </section>
+
+                <section>
+                  <h2>Funciones Puras</h2>
+                  <div class="vspacer50"></div>
+                  <h3>Clojure <em>no</em> es un lenguaje funcional puro</h3>
+                  <div class="vspacer25"></div>
+<pre class="highlight clojure fragment" style="font-size: 110%;">
+  ;; Asignación es un efecto secundario:
+  (def name "Joe")
+
+  ;; Convención '!' para fn impuras
+  (delete-all-records!)
+  (launch-missiles!)
+</pre>
+
+                </section>
+
+                <section>
+                  <h2>Transparencia Referencial</h2>
+                  <!-- <h3>La llamada a una función pueder ser reemplazada por el valor sin cambiar el comportamiento del código</h3> -->
+                  <h3>El resultado de una función depende sólo de sus argumentos</h3>
+                </section>
+
+                <section>
+                  <h2>Transparencia Referencial</h2>
+                  <div class="vspacer25"></div>
+<pre class="highlight clojure fragment" style="font-size: 110%;">
+  (get-expired-invoices)
+</pre>
+<pre class="highlight clojure fragment" style="font-size: 110%;">
+
+  ;; Pasando la lista explícitamente
+  (get-expired-invoices all-invoices)
+</pre>
+
+<pre class="highlight clojure fragment" style="font-size: 110%;">
+
+  ;; Pasando el instante de referencia
+  ;; explícitamente
+  (get-expired-invoices all-invoices now)
+  (get-expired-invoices all-invoices as-of)
+</pre>
+<pre class="highlight clojure fragment" style="font-size: 110%;">
+  (filter (expired? now) all-invoices)
+</pre>
+                </section>
+
+                <section>
+                  <h2>Transparencia Referencial</h2>
+                  <div class="vspacer25"></div>
+                  <h3>Es más fácil razonar acerca del código</h3>
+                  <h3>Es más fácil de probar</h3>
+                  <h3>Es más fácil de <em>cachear</em> el resultado</h3>
+                  <h3>Menos dependencias implícitas entre funciones</h3>
+                </section>
+
+                <section>
+                  <h2>"Estado" en Clojure</h2>
+                  <div class="vspacer50"></div>
+                  <h3>Inmutabilidad</h3>
+                  <h3>Estado - Valor - Identidad</h3>
+                  <h3>Favorece Funciones puras</h3>
+                  <h3>Favorece Transparencia Referencial</h3>
+
+                </section>
+
+                <section>
+                  <h2>Inmutabilidad</h2>
+                  <div class="vspacer25"></div>
                 </section>
 
                 <section> FUNCIONES - DATOS
