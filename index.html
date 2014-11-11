@@ -51,20 +51,20 @@
 					<p>
 
 					  <p ><a href="http://java.conf4.it/">Java Conf 2014 - Buenos Aires</a></p>
-					  <small>por <a href="http://code54.com">Fernando Dobladez</a> / <a href="http://twitter.com/dobladez">@dobladez</a> / <a href="http://code54.com">code54.com</a></small>
+					  <p><a href="http://code54.com">Fernando Dobladez</a> / <a href="http://twitter.com/dobladez">@dobladez</a> / <a href="http://code54.com">code54.com</a></p>
 					</p>
 				</section>
 
 
                 <section>
-				  <h2>¿Cual es el principal problema</h2>
-                  <!-- <h2><em class="fragment current-visible" data-fragment-index="1">técnico</em></h2> -->
-                  <h2>en el desarrollo de Software?</h2>
+				  <h3>¿Cual es el principal problema técnico</h3>
+                  <!-- <h3><em class="fragment current-visible" data-fragment-index="1">técnico</em></h3> -->
+                  <h3>en el desarrollo de Software a gran escala?</h3>
 
                   <div class="vspacer50"></div>
                   <div class="fragment" data-fragment-index="1">
-                    <p>- Problemas técnicos -</p>
-                    <p>- Excluyendo problemas interpersonales o de requerimientos -</p>
+                    <p>Excluyendo temas de management, comunicación, requerimientos.</p>
+                    <p>Sostenido en el tiempo. Equipos de más de dos personas</p>
                   </div>
 				</section>
 
@@ -75,6 +75,10 @@
 				  <!-- <span class="font-big">Complejidad Esencial</span> -->
 
 				</section>
+
+                <!-- <section data-background="custom-img/complexity-chart.svg"> -->
+                <!--   <\!-- <img src="custom-img/complexity-chart.svg" /> -\-> -->
+				<!-- </section> -->
 
 
                 <!-- <section> -->
@@ -124,8 +128,9 @@
 
                 <section>
                   <blockquote>
-                    <h5>&ldquo;...es la principal dificultad en el desarrollo exitoso de software...&rdquo;</h5>
                     <small><p><b>"Out of the Tar Pit"</b> paper, 2006</p><p>By Ben Moseley &amp; Peter Marks</p></small>
+                    <div class="vspacer25"></div>
+                    <h5 class="fragment">&ldquo;...es la principal dificultad en el desarrollo exitoso de software...&rdquo;</h5>
 
                   </blockquote>
 				</section>
@@ -163,9 +168,6 @@
 				<!-- </section> -->
 
 
-                <section data-background="custom-img/complexity-chart.svg">
-                  <!-- <img src="custom-img/complexity-chart.svg" /> -->
-				</section>
 
 
                 <section >
@@ -211,7 +213,7 @@
 				</section>
 
                 <section>
-				  <pre class="java highlight"  style="font-size: 70%; line-height: normal">
+				  <pre class="java highlight"  style="font-size: 100%; line-height: normal">
         public class User {
             String id;
             String username;
@@ -234,26 +236,31 @@
 </pre>
                 </section>
 
+                <!-- <section> -->
+                <!--   <h3 class="fragment fade-out" data-fragment-index="1">No solo el código acarrea Complejidad Accidental...</h3> -->
+
+
+                <!--   <h2 class="fragment" data-fragment-index="1">Application servers</h3> -->
+                <!--   <div class="fragment"> -->
+                <!--     <h2 >Frameworks / libs / tools</h2> -->
+                <!--     <h3>(SOAP, JAX-*, pom.xml, AspectJ, IDEs, ...)</h3> -->
+                <!--   </div> -->
+                <!--   <h2 class="fragment">Tests</h2> -->
+                <!-- </section> -->
+
                 <section>
-                  <h4 class="fragment fade-out" data-fragment-index="1">No solo el código acarrea Complejidad Accidental...</h4>
+				  <h2>COMPLEJO</h2>
+                  <h2><em>no</em> es lo opuesto de</h2>
+                  <h2>FÁCIL</h2>
 
-
-                  <h2 class="fragment" data-fragment-index="1">Application servers</h3>
-                  <div class="fragment">
-                    <h2 >Frameworks / libs / tools</h2>
-                    <h3>(SOAP, JAX-*, Maven pom.xml, AspectJ, IDEs, ...)</h3>
-                  </div>
-                  <h2 class="fragment">Tests ?</h2>
-                  <!-- <h3 class="fragment">SOA ?</h3> -->
-                </section>
-
-                <section>
-				  <h2>Que algo sea SIMPLE</h2>
-                  <h2><em>NO</em> significa que sea FÁCIL</h2>
-				  <h3 class="fragment">- y viceversa -</h3>
+				  <!-- <h2>SIMPLE</h2> -->
+                  <!-- <h2><em>no</em> es sinónimo de</h2> -->
+                  <!-- <h2>FÁCIL</h2> -->
+                  <!-- <h2><em>NO</em> significa que sea FÁCIL</h2> -->
+				  <!-- <h3 class="fragment">- y viceversa -</h3> -->
 
                   <div class="vspacer50"></div>
-                  <a class="fragment" href="http://www.infoq.com/presentations/Simple-Made-Easy">http://www.infoq.com/presentations/Simple-Made-Easy</a>
+                  <a href="http://www.infoq.com/presentations/Simple-Made-Easy">http://www.infoq.com/presentations/Simple-Made-Easy</a>
 				</section>
 
                 <section>
@@ -288,13 +295,19 @@
 
                 <section>
                   <!-- <blockquote><h4>&ldquo;Reducing incidental complexity is a primary focus of Clojure&rdquo;</h4></blockquote> -->
-                  <blockquote><h4>&ldquo;Reducir complejidad accidental es un principal foco de Clojure&rdquo;</h4></blockquote>
-                  <p>-- Rich Hickey</p>
+
+                  <blockquote>
+                    <div style="float: right; width: 200px; vertical-align: middle; padding-right: 20px">
+                    <img src="custom-img/rich_hickey.jpg" style="display: block">
+                    <small>-- Rich Hickey</small>
+                    <!-- <small> 1970</small> -->
+                  </div>
+                    <h4>&ldquo;Reducir complejidad accidental es un principal foco de Clojure&rdquo;</h4></blockquote>
 
                 </section>
 
                 <section style="text-align: left;">
-				  <h1 style="margin-left: 0px;">Simpleza</h1>
+				  <h1 style="margin-left: 0px;">Simplicidad</h1>
                   <h3 style="margin-left: 0px;" class="fragment" data-fragment-index="1">
                     Lispy - Funcional - Datos - Inmutabilidad
                   </h3>
@@ -309,8 +322,25 @@
 				</section>
 
 
-				<section>
-					<h1>Sintaxis y Evaluación</h1>
+				<section data-transition="none">
+					<h2>Aprenda Clojure en 5 minutos</h2>
+                    <div class="vspacer100"></div>
+                    <div class="vspacer100"></div>
+                    <div class="vspacer100"></div>
+                    <div class="vspacer100"></div>
+                    <!-- <img style="width: 300px" src="custom-img/fasten-seatbelt.jpg"> -->
+                </section>
+
+
+				<section data-transition="none"
+                         data-background="custom-img/fasten-seatbelt.jpg"
+                         data-background-transition="fade">
+					<h2>Aprenda Clojure en 5 minutos</h2>
+                    <div class="vspacer100"></div>
+                    <div class="vspacer100"></div>
+                    <div class="vspacer100"></div>
+                    <div class="vspacer100"></div>
+                    <!-- <img style="width: 300px" src="custom-img/fasten-seatbelt.jpg"> -->
                 </section>
 
 				<section>
@@ -345,13 +375,18 @@
                 </section>
 
 				<section>
-					<h2>Todo es evaluación de Expresiones</h2>
-					<h3 class="fragment">No existen las sentencias ("statements")</h3>
+					<h2>Sintaxis</h2>
+                    <div class="vspacer50"></div>
+					<h3 class="fragment">Ya la vimos!</h3>
+                    <h3 class="fragment">Las estructuras de datos son el código</h3>
+					<h3 class="fragment">La "sintaxis" es la interpretación de esas estructuras</h3>
                 </section>
 
 				<section>
 					<h2>Reglas de Evaluación</h2>
                     <div class="vspacer25"></div>
+					<h3>Todo es evaluación de Expresiones</h3>
+                    <h3>(no hay sentencias)</h3>
                     <h3 class="fragment">Los tipos de datos que vimos evaluan a sí mismos</h3>
                     <div class="vspacer50"></div>
                     <h2 class="fragment">Excepción: <i>Symbols</i> y <i>Lists</i></h2>
@@ -377,7 +412,7 @@
        (println "Hello " user-name)</div>
                     </pre>
 
-                    <h4 class="fragment">Operación: una función, un macro o una "forma especial"</h4>
+                    <!-- <h4 class="fragment">Operación: una función, un macro o una "forma especial"</h4> -->
 
                 </section>
 
@@ -572,9 +607,9 @@
                 </section>
 
 				<section>
-                  <h3>Homogeneidad</h3>
-                  <h4 class="fragment">Funciones estándar de Clojure para manipular estructuras y sequencias de cualquier tipo</h4>
-                  <h4 class="fragment">Más reutilización de código y de conocimiento</h4>
+                  <h2>Homogeneidad</h2>
+                  <h3 class="fragment">Funciones estándar de Clojure para manipular estructuras y sequencias de cualquier API</h3>
+                  <h3 class="fragment">Más reutilización de código y de conocimiento</h3>
                 </section>
 
 
@@ -583,24 +618,23 @@
                   <h3>Ejemplo: Homogeneidad en <span class="code-inline">java.time</span></h2>
                   <div class="vspacer50"></div>
 
-                  <h4><em>&ldquo;The Date-Time API offers a rich set of methods [...] names are made consistent between classes wherever possible&rdquo;</em></h4>
+                  <h3><em>&ldquo;The API offers a rich set of methods [...] names are made consistent between classes wherever possible&rdquo;</em></h3>
 
                   <div class="vspacer50"></div>
-                  <pre class="highlight clojure fragment fade-in" style="font-size: 100%; line-height: normal;">
-          of from parse format get is
-             with plus minus to at
+                  <pre class="highlight clojure fragment fade-in" style="font-size: 120%; line-height: normal;">
+       of from parse format get is
+          with plus minus to at
 </pre>
                   <div class="vspacer50"></div>
-                  <small><a href="http://docs.oracle.com/javase/tutorial/datetime/overview/naming.html">
+                  <small>
+                  <a href="http://docs.oracle.com/javase/tutorial/datetime/overview/naming.html">
                       http://docs.oracle.com/javase/tutorial/datetime/overview/naming.html
                   </a></small>
-                    </li>
-                  </ul>
                 </section>
 
 				<section>
 
-                  <h3 class="fragment">Permite que las funciones y datos de distintas librerías puedan interoperar</h3>
+                  <h3>Permite que las funciones y datos de distintas librerías puedan interoperar</h3>
                   <h2 class="fragment">Componer > Reutilizar</h2>
                 </section>
 
@@ -608,12 +642,13 @@
                   <h3>Anti-ejemplo: Apache Commons CSV</h3>
 <pre class="highlight java fragment fade-in" style="font-size: 90%; line-height: normal;">
 
-  Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(in);
-  for (CSVRecord record : records) {
-      String lastName = record.get("Last Name");
-      String firstName = record.get("First Name");
-      ...
-  }
+    Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(in);
+<div class="fragment">    for (CSVRecord record : records) {
+        String lastName = record.get("Last Name");
+        String firstName = record.get("First Name");
+        ...
+    }
+</div>
 </pre>
 
                   <small><a href="http://commons.apache.org/proper/commons-csv/user-guide.html">
@@ -649,18 +684,20 @@
                 <section>
                   <h2>Protocols</h2>
                   <!-- http://blog.8thlight.com/myles-megyesi/2012/04/26/polymorphism-in-clojure.html -->
-
+                  <div class="vspacer50"></div>
                   <h3>Grupo de funciones sin implementación</h3>
-                  <h3 class="fragment">Diferentes impl para cada tipo</h3>
-                  <h3 class="fragment"><b>La impl. puede estar separada de la definición del tipo</b></h3>
+                  <h3 class="fragment">Diferentes impl. para cada tipo</h3>
+                  <div class="vspacer25"></div>
+                  <div class="fragment">
+                    <h3 class="fragment grow"><b>La impl. puede estar separada de la definición del tipo</b></h3></div>
 
                 </section>
                 <section>
-<pre class="highlight clojure" style="font-size: 120%; line-height: normal;">
-<div>         (to-json (parse-csv in))</div>
+<pre class="highlight clojure" style="font-size: 140%; line-height: normal;">
+<div>     (to-json (parse-csv in))</div>
 </pre>
-<h4>¿Y si <span class="inline-code">parse-csv</span> devuelve JodaTime <span class="inline-code">DateTime</span>?</h4>
-<h4><span class="inline-code">to-json</span> no conoce de JodaTime :-(</h4>
+<h3>¿Y si <span class="inline-code">parse-csv</span> devuelve JodaTime <span class="inline-code">DateTime</span></h3>
+<h3>y <span class="inline-code">to-json</span> no conoce de JodaTime?</h3>
 
                 </section>
 
@@ -728,13 +765,13 @@
                   <!-- <h3>No dependen de estado externo</h3> -->
                 </section>
 
-                <section>
-                  <h3>Objetivo:</h3>
-                  <h2>Transparencia Referencial</h2>
-                  <div class="vspacer25"></div>
-                  <h3>Que la llamada a una función pueda ser reemplazada por su resultado sin cambiar el comportamiento del código</h3>
-                  <!-- <h3>El resultado de una función depende sólo de sus argumentos</h3> -->
-                </section>
+                <!-- <section> -->
+                <!--   <h3>Objetivo:</h3> -->
+                <!--   <h2>Transparencia Referencial</h2> -->
+                <!--   <div class="vspacer25"></div> -->
+                <!--   <h3>Que la llamada a una función pueda ser reemplazada por su resultado sin cambiar el comportamiento del código</h3> -->
+                <!--   <\!-- <h3>El resultado de una función depende sólo de sus argumentos</h3> -\-> -->
+                <!-- </section> -->
 
                 <section>
 <pre class="highlight clojure" style="font-size: 110%;">
@@ -750,7 +787,7 @@
 </pre>
 <pre class="highlight clojure fragment" style="font-size: 110%;">
 
-  (filter (partial expired? as-of) invoices)
+  (filter (partial expired? (now)) invoices)
 </pre>
                 </section>
 
@@ -761,8 +798,8 @@
                   <h3 class="fragment">Fácil de probar</h3>
                   <h3 class="fragment">Fácil de experimentar</h3>
                   <h3 class="fragment">Fácil de reutilizar y componer</h3>
-                  <h3 class="fragment">Es "thread-safe"</h3>
-                  <h3 class="fragment">Es más fácil de <em>cachear</em> el resultado</h3>
+                  <!-- <h3 class="fragment">Es "thread-safe"</h3> -->
+                  <h3 class="fragment">Se puede <em>cachear</em> el resultado</h3>
                   <h3 class="fragment">Menos dependencias implícitas entre funciones</h3>
                 </section>
 
@@ -783,14 +820,13 @@
                   <!-- <h2>Inmutabilidad</h2> -->
                   <!-- <div class="vspacer25"></div> -->
 <pre class="highlight clojure" style="font-size: 130%;">
-     (expired? as-of invoice)
+     (expired? as-of-date invoice)
 </pre>
   <div class="vspacer25"></div>
   <h3 class="fragment">¿Y si <span class="inline-code">expired?</span> modifica al <span class="inline-code">invoice</span>?</h3>
   <h3 class="fragment">perdemos transparencia referencial :-(</h3>
   <div class="vspacer75"></div>
   <h3 class="fragment">¿Y si <span class="inline-code">invoice</span>  y <span class="inline-code">as-of</span> fuesen inmutables?</h3>
-  <h3 class="fragment">la recuperamos :-)</h3>
                 </section>
 
                 <section>
@@ -811,7 +847,7 @@
 
                   <h4 class="fragment">Incluyendo collecciones, con anidamiento</h4>
                   <h4 class="fragment">También los tipos definidos por el usuario <span class="inline-code">(defrecord )</span></h4>
-                  <h4 class="fragment">Además son "persistentes"</h4>
+                  <!-- <h4 class="fragment">Además son "persistentes"</h4> -->
                   <h4 class="fragment">Las secuencias "lazy" también son inmutables</h4>
                   <div class="vspacer25"></div>
                   <h4 class="fragment">Excepción: objetos mutables de un API Java</h4>
@@ -829,7 +865,7 @@
 
                 <section>
                   <h2>En Clojure:</h2>
-                  <h3>Referencias <em>indirectas</em> a objetos <em>inmutables</em></h3>
+                  <h3>Referencias <em>indirectas</em> a valores <em>inmutables</em></h3>
                   <img src="custom-img/referencias-inmutables.png" >
                   <div class="fragment">
                     <h4>Separa Identidad del Valor</h4>
@@ -885,7 +921,7 @@
 
 
 				<section>
-				  <h3>multiple-dispath - metadata - concurrency refs</h3>
+				  <h3>multiple-dispatch - metadata - concurrency refs</h3>
                   <h3>core.async - core.logic - pattern matching - Om/React</h3>
                   <h3>Datomic - transducers - clara.rules</h3>
                   <h3>...</h3>
@@ -921,7 +957,7 @@
                     </div>
                   </blockquote>
                   <p class="fragment">-- Dijkstra 1984</p>
-			    </section>
+                </section>
 
                 <section>
                   <section>
@@ -930,14 +966,20 @@
                     <h2><span class="fragment">¡Anteojos Hipster!</span></h2>
 				  </section>
 				  <section data-transition="linear" data-background="custom-img/BreakingBad-Edsjer-Dijkstra.png" data-background-transition="slide">
-                    <span class="fragment" data-fragment-index="2">
-                      <img class="fragment fade-out"
-                           data-fragment-index="3"
-                           style="position: absolute;" src="custom-img/dijkstra_young.jpg" /></span>
-                    <img class="fragment fade-in" data-fragment-index="3"
-                         src="custom-img/walter-white2.jpg" />
+
+                    <img class="fragment fade-in" src="custom-img/dijkstra_young.jpg" >
+                    <img class="fragment fade-in" src="custom-img/walter-white2.jpg" />
+
+
+                    <!-- <span class="fragment" data-fragment-index="2"> -->
+                    <!--   <img class="fragment fade-out" -->
+                    <!--        data-fragment-index="3" -->
+                    <!--        style="position: absolute;" src="custom-img/dijkstra_young.jpg" /></span> -->
+                    <!-- <img class="fragment fade-in" data-fragment-index="3" -->
+                    <!--      src="custom-img/walter-white2.jpg" /> -->
 				  </section>
                 </section>
+
 
 				<section>
 					<h1>Gracias</h1>
@@ -967,12 +1009,15 @@
 				history: true,
 				center: true,
 
+                // hideAddressBar: true,
+
+
 				theme: 'night', //Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
 
 				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
+				// parallaxBackgroundImage: 'custom-img/buenos-aires-panorama.jpg',
+				// parallaxBackgroundSize: '2091px 787px',
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
