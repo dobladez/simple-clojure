@@ -365,9 +365,9 @@
 					<h2>Datos compuestos</h2>
 				  <pre class="clojure highlight"  style="font-size: 120%; line-heixght: normal;">
 
-           [1 2 "tres"]      ;; Array
+           [1 2 "tres"]      ;; Vector
            <div class="fragment">           (1 2 "tres")      ;; List</div>
-<div class="fragment">           {:key1 "value1"
+<div class="fragment">           {:key1 "value1",
             :key2 "value2" } ;; Map</div>
 <div class="fragment">           #{1 2 3 4 5}      ;; Set
 
@@ -377,7 +377,7 @@
 				<section>
 					<h2>Sintaxis</h2>
                     <div class="vspacer50"></div>
-					<h3 class="fragment">Ya la vimos!</h3>
+					<h3 class="fragment">¡Ya la vimos!</h3>
                     <h3 class="fragment">Las estructuras de datos son el código</h3>
 					<h3 class="fragment">La "sintaxis" es la interpretación de esas estructuras</h3>
                 </section>
@@ -412,7 +412,7 @@
        (println "Hello " user-name)</div>
                     </pre>
 
-                    <!-- <h4 class="fragment">Operación: una función, un macro o una "forma especial"</h4> -->
+                    <!-- <h4 class="fragment">Operación: una función, un macro o una "op. especial"</h4> -->
 
                 </section>
 
@@ -422,7 +422,7 @@
 					<h3>Operaciones</h3>
                   <div class="vspacer50"></div>
                     <h2>Funciones</h2>
-                    <h2>"Formas Especiales"</h2>
+                    <h2>Operaciones "Especiales"</h2>
                     <h2>Macros</h2>
                 </section>
 
@@ -450,16 +450,17 @@
                 </section>
 
 				<section>
-					<h2>Operaciones: "Special Forms"</h2>
-                    <h3>Primitivas provistas por el lenguaje</h3>
+					<h2>Operaciones: "Especiales"</h2>
+                    <h3 class="fragment">Conjunto mínimos de operaciones que no pueden implementarse como funciones</h3>
+                    <h3 class="fragment">Forman el núcleo de operaciones sobre las que se monta todo el resto</h3>
                     <div class="vspacer25"></div>
-                    <h4>Evaluación de argumentos es particular para cada <i>special form</i></h4>
+                    <h4 class="fragment">Evaluación de argumentos es particular para cada operación especial</h4>
 
                     <div class="vspacer25"></div>
-<!-- ;; In java: -->
-<!-- ;;   condition-exp ? true-exp : false-exp; -->
+                </section>
 
-<pre class="highlight clojure fragment" style="font-size: 120%;">
+				<section>
+<pre class="highlight clojure" style="font-size: 120%;">
         (def pi 3.1415)
         (def user-name "joe")
 </pre>
@@ -500,7 +501,23 @@
 
                     <h3><code>defn if-not and or when when-not ...</code></h3>
                 </section>
-				<section>
+
+                <section>
+<pre class="highlight clojure" style="font-size: 130%; line-height: normal;">
+                (and a b)
+<div class="fragment">
+;; Se expande a:
+                (if a b a)
+</div>
+<div class="fragment">
+                (and a b c)</div>
+<div class="fragment">;; se expande a:
+                (if a (and b c) a)
+<div class="fragment">                (if a (if b c b) a)</div>
+</div></pre>
+                </section>
+
+                <section>
                   <h3>Ej. Liberar recursos</h3>
                     <div class="vspacer25"></div>
 <pre class="highlight clojure fragment fade-in"
@@ -539,21 +556,6 @@
        (response (task-filters/delete-by-id! id))))
 </pre>
 
-                </section>
-<!--                 <section> -->
-<!-- <pre class="highlight clojure" style="font-size: 130%; line-height: normal;"> -->
-<!--                 (and a b) -->
-<!-- <div class="fragment"> -->
-<!-- ;; Se expande a: -->
-<!--                 (if a b a) -->
-<!-- </div> -->
-<!-- <div class="fragment"> -->
-<!--                 (and a b c)</div> -->
-<!-- <div class="fragment">;; se expande a: -->
-<!--                 (if a (and b c) a) -->
-<!-- <div class="fragment">                (if a (if b c b) a)</div> -->
-<!-- </div></pre> -->
-<!--                 </section> -->
                 </section>
 
 
@@ -613,27 +615,25 @@
                 </section>
 
 
+<!--                 <section> -->
+<!--                   <h3>Ejemplo: Homogeneidad en <span class="code-inline">java.time</span></h2> -->
+<!--                   <div class="vspacer50"></div> -->
+
+<!--                   <h3><em>&ldquo;The API offers a rich set of methods [...] names are made consistent between classes wherever possible&rdquo;</em></h3> -->
+
+<!--                   <div class="vspacer50"></div> -->
+<!--                   <pre class="highlight clojure fragment fade-in" style="font-size: 120%; line-height: normal;"> -->
+<!--        of from parse format get is -->
+<!--           with plus minus to at -->
+<!-- </pre> -->
+<!--                   <div class="vspacer50"></div> -->
+<!--                   <small> -->
+<!--                   <a href="http://docs.oracle.com/javase/tutorial/datetime/overview/naming.html"> -->
+<!--                       http://docs.oracle.com/javase/tutorial/datetime/overview/naming.html -->
+<!--                   </a></small> -->
+<!--                 </section> -->
 
                 <section>
-                  <h3>Ejemplo: Homogeneidad en <span class="code-inline">java.time</span></h2>
-                  <div class="vspacer50"></div>
-
-                  <h3><em>&ldquo;The API offers a rich set of methods [...] names are made consistent between classes wherever possible&rdquo;</em></h3>
-
-                  <div class="vspacer50"></div>
-                  <pre class="highlight clojure fragment fade-in" style="font-size: 120%; line-height: normal;">
-       of from parse format get is
-          with plus minus to at
-</pre>
-                  <div class="vspacer50"></div>
-                  <small>
-                  <a href="http://docs.oracle.com/javase/tutorial/datetime/overview/naming.html">
-                      http://docs.oracle.com/javase/tutorial/datetime/overview/naming.html
-                  </a></small>
-                </section>
-
-				<section>
-
                   <h3>Permite que las funciones y datos de distintas librerías puedan interoperar</h3>
                   <h2 class="fragment">Componer > Reutilizar</h2>
                 </section>
