@@ -526,25 +526,25 @@
                 </section>
 
                 <section>
-                  <h3>Ej. Liberar recursos</h3>
+                  <h3>Ej. Liberar recursos (Java)</h3>
                   <div class="vspacer25"></div>
                   <pre class="highlight java fragment fade-in"
                        style="font-size: 100%; line-height: normal;">
-    InputStream fis = null;
-    try {
-        fis = new FileInputStream(src)
+      InputStream fis = null;
+      try {
+          fis = new FileInputStream(src)
 
-        // bla bla...
+          // bla bla...
 
-    } finally {
-        if (fis != null) {
-            try {
-                fis.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
+      } finally {
+          if (fis != null) {
+              try {
+                  fis.close();
+              } catch (IOException e) {
+                  e.printStackTrace();
+              }
+          }
+      }
 </pre>
                 </section>
 
@@ -565,12 +565,12 @@
                 <section>
                   <h3>Ej. Liberar recursos (Clojure)</h3>
                     <div class="vspacer25"></div>
-<pre class="highlight clojure fragment fade-in"
-                         style="font-size: 100%; line-height: normal;">
+<pre class="highlight clojure fade-in"
+                         style="font-size: 110%; line-height: normal;">
      (with-open [w (io/writer out-file)]
         (write-data! w))</pre>
 <pre class="highlight clojure fragment fade-in"
-                         style="font-size: 100%; line-height: normal;">
+                         style="font-size: 110%; line-height: normal;">
 
      ;; Se expande a...  (aprox.)
 
@@ -584,7 +584,7 @@
 				<section>
                   <h3>Ej. Macros para definir API REST</h3>
                     <div class="vspacer25"></div>
-<pre class="highlight clojure fragment fade-in"
+<pre class="highlight clojure fade-in"
                          style="font-size: 90%; line-height: normal;">
 (defroutes secured-routes
 
@@ -1047,7 +1047,10 @@
 
 
 				<section>
-					<h1>Gracias</h1>
+					<h1>¡Gracias!</h1>
+
+					<p><a href="http://code54.com">Fernando Dobladez</a> / <a href="http://twitter.com/dobladez">@dobladez</a> / <a href="http://code54.com">code54.com</a></p>
+
                 </section>
 
 			</div>
