@@ -40,6 +40,9 @@
     padding-top: 25px;
 }
 
+.reveal section blockquote.darker-quote {
+    background: rgba(1,1,1,.5);
+}
 
 .reveal .slides section .fragment.shrink2 {
     opacity: 1;
@@ -60,7 +63,7 @@
     -moz-transform: scale( 1.8 );
     -ms-transform: scale( 1.8 );
     -o-transform: scale( 1.8 );
-    transform: scale( 2.5 );
+    transform: scale( 2.2 );
 }
 
 

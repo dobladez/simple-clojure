@@ -45,13 +45,14 @@
 			<div class="slides">
 			    <section data-background="custom-img/buenos-aires-panorama.jpg">
 					<h1>Simple. Clojure.</h1>
-                    <div class="vspacer50"></div>
+                    <!-- <div class="vspacer25"></div> -->
 					<h3 >Ideas y filosofía detrás del lenguaje Clojure</h3>
                     <img style="border: none; background: none" width="178" height="238" src="custom-img/clojure-logo-plain.svg">
 					<p>
 
 					  <p ><a href="http://java.conf4.it/">Java Conf 2014 - Buenos Aires</a></p>
 					  <p><a href="http://code54.com">Fernando Dobladez</a> / <a href="http://twitter.com/dobladez">@dobladez</a> / <a href="http://code54.com">code54.com</a></p>
+                    <p><img style="width: 200px; background: rgba(0,0,0,0); border: none" src="custom-img/code54-alt.png"></p>
 					</p>
 				</section>
 
@@ -203,10 +204,8 @@
 				  <pre class="java highlight"  style="font-size: 100%; line-height: normal;">
 <div class="fragment shrink2" data-fragment-index="1">
   class Hello {
-      public static void main(String[] args) {
-</div>
-<div class="fragment fade-out" data-fragment-index="1" style="display: inline-block;">          System.out.</div><div class="fragment grow2" style="display: inline-block;" data-fragment-index="1">println("Hello World!")</div><div class="fragment fade-out" data-fragment-index="1" style="display: inline-block;">;</div>
-<div class="fragment shrink2" data-fragment-index="1">      }
+    public static void main(String[] args) {</div><div class="fragment fade-out" data-fragment-index="1" style="display: inline-block;">      System.out.</div><div class="fragment grow2" style="display: inline-block;" data-fragment-index="1">println("¡Hola Mundo!")</div><div class="fragment fade-out" data-fragment-index="1" style="display: inline-block;">;</div>
+<div class="fragment shrink2" data-fragment-index="1">    }
   }
 </div>
 
@@ -250,9 +249,12 @@
                 <!-- </section> -->
 
                 <section>
-				  <h2>COMPLEJO</h2>
-                  <h2><em>no</em> es lo opuesto de</h2>
-                  <h2>FÁCIL</h2>
+                  <h1>COMPLEJO</h1>
+                  <h2><em>NO</em> es sinónimo de</h2>
+                  <h1>DIFÍCIL</h1>
+
+                  <!-- <h2>Lo opuesto de</h2><h2>"COMPLEJO"</h2> -->
+                  <!-- <h2><em>no</em> es</h2><h2>"FÁCIL"</h2> -->
 
 				  <!-- <h2>SIMPLE</h2> -->
                   <!-- <h2><em>no</em> es sinónimo de</h2> -->
@@ -265,7 +267,7 @@
 				</section>
 
                 <section>
-				  <h2>Simple vs. Complejo</h2>
+				  <h2>Complejo vs. Simple</h2>
                   <div class="fragment">
                     <h3>- conceptos objetivos -</h3>
                     <div class="vspacer50"></div>
@@ -324,7 +326,7 @@
 
 
 				<section data-transition="none">
-					<h2>Aprenda Clojure en 5 minutos</h2>
+					<h2>Aprenda Clojure en 10 minutos</h2>
                     <div class="vspacer100"></div>
                     <div class="vspacer100"></div>
                     <div class="vspacer100"></div>
@@ -336,7 +338,7 @@
 				<section data-transition="none"
                          data-background="custom-img/fasten-seatbelt.jpg"
                          data-background-transition="fade">
-					<h2>Aprenda Clojure en 5 minutos</h2>
+					<!-- <h2>Aprenda Clojure en 5 minutos</h2> -->
                     <div class="vspacer100"></div>
                     <div class="vspacer100"></div>
                     <div class="vspacer100"></div>
@@ -469,7 +471,13 @@
         (if (baja-altura? alt)
           (abrir-paracaidas!)
           (log "Sigamos cayendo..."))
-        <!-- (if (> disk-pct-usage 90) --> <!--   (clean-tmp-files!) --> <!--   (log/info "We are good")) -->
+</pre>
+<pre class="highlight java fragment fade-in"
+                         style="font-size: 120%; line-height: normal;">
+
+Java:   bajaAltura(alt) ?
+           abrirParacaidas() :
+           log("Sigamos cayendo...");
 </pre>
 
                 </section>
@@ -502,28 +510,41 @@
                     <h3><code>defn if-not and or when when-not ...</code></h3>
                 </section>
 
+
                 <section>
 <pre class="highlight clojure" style="font-size: 130%; line-height: normal;">
-                (and a b)
+                (or a b)
 <div class="fragment">
 ;; Se expande a:
-                (if a b a)
-</div>
-<div class="fragment">
-                (and a b c)</div>
+                (if a a b)
+
+<div class="fragment">  en Java:      a ? a : b;</div> </div>
+<div class="fragment">                (or a b c)</div>
 <div class="fragment">;; se expande a:
-                (if a (and b c) a)
-<div class="fragment">                (if a (if b c b) a)</div>
+                (if a a (or b c))
+<div class="fragment">                (if a a (if b b c))</div>
 </div>
 </pre>
-<!-- (defmacro and -->
-<!--   ([] true) -->
-<!--   ([x] x) -->
-<!--   ([x & next] -->
-<!--    `(let [a# ~x] -->
-<!--       (if a# (and ~@next) a#)))) -->
-
                 </section>
+
+
+<!--                 <section> -->
+<!-- <pre class="highlight clojure" style="font-size: 130%; line-height: normal;"> -->
+<!--                 (and a b) -->
+<!-- <div class="fragment"> -->
+<!-- ;; Se expande a: -->
+<!--                 (if a b a) -->
+<!-- ;; en Java: -->
+<!--                  a ? b : a;</div> -->
+
+<!-- <div class="fragment"> -->
+<!--                 (and a b c)</div> -->
+<!-- <div class="fragment">;; se expande a: -->
+<!--                 (if a (and b c) a) -->
+<!-- <div class="fragment">                (if a (if b c b) a)</div> -->
+<!-- </div> -->
+<!-- </pre> -->
+<!--                 </section> -->
 
                 <section>
                   <h3>Ej. Liberar recursos (Java)</h3>
@@ -920,30 +941,32 @@
                   <h2>En Java (típico en OO):</h2>
                   <h3>Referencias <em>directas</em> a objetos <em>mutables</em></h3>
                   <img src="custom-img/referencias-mutables.png" >
-                  <div class="fragment">
+                  <div>
                     <h4>Identidad y Valor van juntos</h4>
                     <h4>El estado puede cambiar en cualquier momento</h4>
                   </div>
                 </section>
 
-                <section>
-                  <h2>En Clojure:</h2>
-                  <h3>Referencias <em>indirectas</em> a valores <em>inmutables</em></h3>
-                  <img src="custom-img/referencias-inmutables.png" >
-                  <div class="fragment">
-                    <h4>Separa Identidad del Valor</h4>
-                    <h4>Los Valores no cambian</h4>
-                    <h4>De-referencia explícita para obtener un Valor</h4>
-                  </div>
-                </section>
+                <!-- <section> -->
+                <!--   <h2>En Clojure:</h2> -->
+                <!--   <h3>Referencias <em>indirectas</em> a valores <em>inmutables</em></h3> -->
+                <!--   <img src="custom-img/referencias-inmutables.png" > -->
+                <!--   <div class="fragment"> -->
+                <!--     <h4>Separa Identidad del Valor</h4> -->
+                <!--     <h4>Los Valores no cambian</h4> -->
+                <!--     <h4>De-referencia explícita para obtener un Valor</h4> -->
+                <!--   </div> -->
+                <!-- </section> -->
 
                 <section>
-                  <h3>Cambio de estado: Atómico</h3>
+                  <h2>En Clojure:</h2>
+                  <h3>Refs. <em>indirectas</em> a valores <em>inmutables</em></h3>
+                  <!-- <h3>Cambio de estado: Atómico</h3> -->
                   <img src="custom-img/referencias-inmutables-change.png" >
                   <div class="fragment">
                     <h4>Identidad: sucesión de Valores inmutables</h4>
                     <h4>No bloquea otros "readers"</h4>
-                    <h4>No afecta valores anteriores</h4>
+                    <!-- <h4>No afecta valores anteriores</h4> -->
                   </div>
                 </section>
 
@@ -953,14 +976,13 @@
                     <h2>Observers ("Listeners")</h2>
                   <div class="vspacer50"></div>
                   <pre class="highlight clojure" style="font-size: 100%;">
-            (def listener-fns (atom []))
+            (def listeners (atom []))
 
-            (defn subscribe [fn]
-              (swap! listener-fns conj fn))
-
-            (defn fire [value]
-              (doseq [listener @listener-fns]
-                (listener value)))
+<div class="fragment">            (defn subscribe [listener]
+              (swap! listeners conj listener))</div>
+<div class="fragment">            (defn fire [value]
+              (doseq [listener @listeners]
+                (listener value)))</div>
                   </pre>
                   <div class="fragment">
                     <h4>Thread-safe</h4>
@@ -985,8 +1007,9 @@
 
 
 				<section>
-				  <h3>multiple-dispatch - metadata - concurrency refs</h3>
-                  <h3>core.async - core.logic - pattern matching - Om/React</h3>
+				  <h3>multimethods - metadata - concurrency refs</h3>
+				  <h3>core.typed - schemas - pattern matching</h3>
+                  <h3>core.async - core.logic - Om/React</h3>
                   <h3>Datomic - transducers - clara.rules</h3>
                   <h3>...</h3>
                 </section>
@@ -1010,7 +1033,8 @@
                 </section>
 
                 <section data-background="custom-img/us-money-with-black-backdrop2.jpg">
-                  <blockquote>
+                  <blockquote class="darker-quote">
+
                     <!-- <h4>...and to make matters worse</h4> -->
                     <!-- <div class="fragment"> -->
                     <!--   <h3>complexity sells better!&rdquo;</h3> -->
@@ -1019,37 +1043,37 @@
                     <div>
                       <h3 style="color: rgb(0, 255, 236); text-shadow: black 0 3px 3px;">... la Complejidad vende más!&rdquo;</h3>
                     </div>
+                  <img style="background: none; border: none" src="custom-img/dilbert-boss3.png">
                   </blockquote>
-                      <img style="border: none" src="custom-img/dilbert-boss3.png">
 
                 </section>
 
                 <section>
-                  <section>
-                    <img src="custom-img/dijkstra_young.jpg" />
-                    <p>Dijkstra</p>
-                    <h2><span class="fragment">¡Anteojos Hipster!</span></h2>
-				  </section>
-				  <section data-transition="linear" data-background="custom-img/BreakingBad-Edsjer-Dijkstra.png" data-background-transition="slide">
+                  <img src="custom-img/dijkstra_young.jpg" />
+                  <p>Dijkstra</p>
+                  <h2><span class="fragment">¡Anteojos Hipster!</span></h2>
+				</section>
 
-                    <img class="fragment fade-in" src="custom-img/dijkstra_young.jpg" >
-                    <img class="fragment fade-in" src="custom-img/walter-white2.jpg" />
+				<section data-transition="linear" data-background="custom-img/BreakingBad-Edsjer-Dijkstra.png" data-background-transition="slide">
+
+                  <img class="fragment fade-in" src="custom-img/dijkstra_young.jpg" >
+                  <img class="fragment fade-in" src="custom-img/walter-white2.jpg" />
 
 
-                    <!-- <span class="fragment" data-fragment-index="2"> -->
-                    <!--   <img class="fragment fade-out" -->
-                    <!--        data-fragment-index="3" -->
-                    <!--        style="position: absolute;" src="custom-img/dijkstra_young.jpg" /></span> -->
-                    <!-- <img class="fragment fade-in" data-fragment-index="3" -->
-                    <!--      src="custom-img/walter-white2.jpg" /> -->
-				  </section>
-                </section>
-
+                  <!-- <span class="fragment" data-fragment-index="2"> -->
+                  <!--   <img class="fragment fade-out" -->
+                  <!--        data-fragment-index="3" -->
+                  <!--        style="position: absolute;" src="custom-img/dijkstra_young.jpg" /></span> -->
+                  <!-- <img class="fragment fade-in" data-fragment-index="3" -->
+                  <!--      src="custom-img/walter-white2.jpg" /> -->
+				</section>
 
 				<section>
 					<h1>¡Gracias!</h1>
 
+                  <div class="vspacer50"></div>
 					<p><a href="http://code54.com">Fernando Dobladez</a> / <a href="http://twitter.com/dobladez">@dobladez</a> / <a href="http://code54.com">code54.com</a></p>
+                    <p><img style="width: 200px; background: rgba(0,0,0,0); border: none" src="custom-img/code54-alt.png"></p>
 
                 </section>
 
@@ -1072,7 +1096,7 @@
                 width: 960,
                 height: 700,
 
-				controls: true,
+				controls: false,
 				progress: true,
 				history: true,
 				center: true,
